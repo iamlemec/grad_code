@@ -1,9 +1,9 @@
 .RECIPEPREFIX = >
 
 NOTEBOOKS := $(wildcard lecture_*.ipynb)
-CONVERTED := $(NOTEBOOKS:%.ipynb=html/%.html)
+CONVERTED := $(NOTEBOOKS:%.ipynb=docs/%.html)
 
-html/%.html : %.ipynb
+docs/%.html : %.ipynb
 > jupyter-nbconvert --to html --output $@ $<
 
 all: ${CONVERTED}
