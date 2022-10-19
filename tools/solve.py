@@ -2,6 +2,8 @@
 ## solve/optimize tools
 ##
 
+from cmath import pi
+from winreg import DeleteValue
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.optimize as opt
@@ -115,3 +117,25 @@ def optim_multivar(func, x0, method, ax=None):
     ax.scatter(*x1, color=colors[1])
 
     return i, x1, f1
+
+def _homotopy_step(f, dt, x0, t0):
+    # compute values
+    fx_val = fx(x0, t0)
+    ft_val = ft(x0, t0)
+
+    # prediction step
+    t1 = t0 + dt
+
+    # compute values
+    f_val = f(x1, t1)
+    fx_val = fx(x1, t1)
+
+    # correction step
+    dx = -np.linalg.solve(fx_val, f_val)
+    x2 = x1 + dx
+
+    # return state/hist
+    return x2, t1
+
+def homotopy():
+    pass
