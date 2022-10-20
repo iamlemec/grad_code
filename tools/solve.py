@@ -29,7 +29,7 @@ def solve_univar(solver, func, state, xlim, K=100, eps=1e-8, ax=None):
     # plot path of solution
     if ax is None:
         _, ax = plt.subplots()
-    viz.plot(func, *xlim, ax=ax, c='k')
+    viz.plot(func, *xlim, zero=True, ax=ax, c='k')
     for x, y in zip(hist, hist_value):
         ax.scatter(x, y, zorder=10)
 
@@ -130,23 +130,18 @@ def add_index(x, h, arg):
 
 def deriv(f, x, arg=0, eps=1e-8):
     x = ensure_tuple(x)
-    xa = x[arg]
-
     xh = add_index(x, eps, arg)
     der = (f(*xh)-f(*x))/eps
-
     return der
 
-def homotopy_step(f, st0, dt=0.01, eps=1e-8, corr=10):
-    x, t = st0
-
+def homotopy_step(f, x, t, dt=0.01, eps=1e-8, corr=10):
     # compute values
     fx_val = deriv(f, (x, t), arg=0, eps=eps)
     ft_val = deriv(f, (x, t), arg=1, eps=eps)
 
     # prediction step
     dxdt = -ft_val/fx_val
-    xp = dt*dxdt
+    x += dt*dxdt
     t += dt
 
     for i in range(corr):
@@ -165,14 +160,14 @@ def homotopy_step(f, st0, dt=0.01, eps=1e-8, corr=10):
     # return state/hist
     return x, t
 
-def homotopy(f, x0, dt=0.01, eps=1e-8, corr=10):
+def homotopy(f, x0, dt=0.01, **kwargs):
     x, t = x0, 0.0
     K = int(np.ceil(1/dt))
 
     path = [(x, t)]
     for k in range(K):
         dt1 = min(dt, 1-t)
-        x, t = homotopy_step(f, (x, t), dt=dt1, eps=eps, corr=corr)
+        x, t = homotopy_step(f, x, t, dt=dt1, **kwargs)
         path.append((x, t))
 
     xpath, tpath = map(np.array, zip(*path))
