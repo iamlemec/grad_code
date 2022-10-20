@@ -1,15 +1,15 @@
 ##
-## solve/optimize tools
+## solve/optimize/homotopy tools
 ##
 
-from cmath import pi
-from winreg import DeleteValue
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.optimize as opt
 
 from . import visual as viz
 from .visual import colors
+
+## solving tools
 
 def solve_univar(solver, func, state, xlim, K=100, eps=1e-8, ax=None):
     hist = [state]
@@ -69,6 +69,8 @@ def solve_multivar(func, x0, method, axs=None):
 
     return i, x1, f1
 
+## optimization tools
+
 def optim_univar(optim, func, state, xlim, vmin=0, K=100, eps=1e-8, ax=None):
     hist = [state]
 
@@ -118,24 +120,60 @@ def optim_multivar(func, x0, method, ax=None):
 
     return i, x1, f1
 
-def _homotopy_step(f, dt, x0, t0):
+## homotopy tools
+
+def ensure_tuple(x):
+    return x if type(x) is tuple else (x,)
+
+def add_index(x, h, arg):
+    return (a+h if k == arg else a for k, a in enumerate(x))
+
+def deriv(f, x, arg=0, eps=1e-8):
+    x = ensure_tuple(x)
+    xa = x[arg]
+
+    xh = add_index(x, eps, arg)
+    der = (f(*xh)-f(*x))/eps
+
+    return der
+
+def homotopy_step(f, st0, dt=0.01, eps=1e-8, corr=10):
+    x, t = st0
+
     # compute values
-    fx_val = fx(x0, t0)
-    ft_val = ft(x0, t0)
+    fx_val = deriv(f, (x, t), arg=0, eps=eps)
+    ft_val = deriv(f, (x, t), arg=1, eps=eps)
 
     # prediction step
-    t1 = t0 + dt
+    dxdt = -ft_val/fx_val
+    xp = dt*dxdt
+    t += dt
 
-    # compute values
-    f_val = f(x1, t1)
-    fx_val = fx(x1, t1)
+    for i in range(corr):
+        # check convergence
+        f_val = f(x, t)
+        if abs(f_val) < eps:
+            break
 
-    # correction step
-    dx = -np.linalg.solve(fx_val, f_val)
-    x2 = x1 + dx
+        # compute values
+        fx_val = deriv(f, (x, t), arg=0, eps=eps)
+
+        # correction step
+        dx = -f_val/fx_val
+        x += dx
 
     # return state/hist
-    return x2, t1
+    return x, t
 
-def homotopy():
-    pass
+def homotopy(f, x0, dt=0.01, eps=1e-8, corr=10):
+    x, t = x0, 0.0
+    K = int(np.ceil(1/dt))
+
+    path = [(x, t)]
+    for k in range(K):
+        dt1 = min(dt, 1-t)
+        x, t = homotopy_step(f, (x, t), dt=dt1, eps=eps, corr=corr)
+        path.append((x, t))
+
+    xpath, tpath = map(np.array, zip(*path))
+    return xpath, tpath
