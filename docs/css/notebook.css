@@ -1,0 +1,9 @@
+#container {
+    width: 900px;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+a.anchor-link {
+    display: none;
+}

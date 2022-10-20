@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link href="css/jupyter.css" rel="stylesheet">
+<link href="css/notebook.css" rel="stylesheet">
+<link href="css/colorful.css" rel="stylesheet">
+<link href="/KaTeX/katex.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="container">
+
+{% include notebook %}
+
+</div>
+
+<script src="/KaTeX/katex.min.js"></script>
+<script src="/KaTeX/contrib/auto-render.min.js"></script>
+
+<script type="text/javascript">
+
+// katex config
+let delim = [
+    {left: "$$", right: "$$", display: true},
+    {left: "$", right: "$", display: false},
+];
+
+// get container
+let container = document.getElementById('container');
+
+// render math
+renderMathInElement(container, {
+    'delimiters': delim,
+});
+
+</script>
+
+</body>
+
+</html>
