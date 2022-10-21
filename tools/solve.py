@@ -29,9 +29,10 @@ def solve_univar(solver, func, state, xlim, K=100, eps=1e-8, ax=None):
     # plot path of solution
     if ax is None:
         _, ax = plt.subplots()
-    viz.plot(func, *xlim, zero=True, ax=ax, c='k')
+    viz.plot(func, *xlim, zero=0, ax=ax, c='k')
     for x, y in zip(hist, hist_value):
-        ax.scatter(x, y, zorder=10)
+        ax.scatter(x, y, zorder=5)
+    ax.scatter(hist[:, -1], hist_value[:, -1], color='k', zorder=10)
 
     return i, state, value
 
