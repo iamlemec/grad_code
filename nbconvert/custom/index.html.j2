@@ -1,19 +1,37 @@
-<!DOCTYPE html>
+{%- extends 'classic/base.html.j2' -%}
 
+{%- block header -%}
+
+<!DOCTYPE html>
 <html>
 
 <head>
-<link href="css/jupyter.css" rel="stylesheet">
+
+{%- block html_head -%}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% set nb_title = nb.metadata.get('title', '') or resources['metadata']['name'] %}
+<title>{{nb_title}}</title>
+{%- endblock html_head -%}
+
+{% block notebook_css %}
 <link href="css/notebook.css" rel="stylesheet">
-<link href="css/colorful.css" rel="stylesheet">
 <link href="/KaTeX/katex.min.css" rel="stylesheet">
+{% endblock notebook_css %}
+
 </head>
+
+{%- endblock header -%}
+
+{% block body_header %}
 
 <body>
 
 <div id="container">
 
-{% include notebook %}
+{% endblock body_header %}
+
+{% block body_footer %}
 
 </div>
 
@@ -40,4 +58,12 @@ renderMathInElement(container, {
 
 </body>
 
+{% endblock body_footer %}
+
+{% block footer %}
+
+{{ super() }}
+
 </html>
+
+{% endblock footer %}
