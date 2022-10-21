@@ -57,16 +57,16 @@ def solve_multivar(func, x0, method, axs=None):
         _, axs = plt.subplots(ncols=2, figsize=(10, 3.5))
 
     # plot path of x values
-    axs[0].plot(*hist, zorder=-1)
+    axs[0].plot(*hist, color='k', zorder=-1)
     axs[0].scatter(*hist)
-    axs[0].scatter(*x0, color='k')
-    axs[0].scatter(*x1, color=colors[1])
+    axs[0].scatter(*x0, color=colors[1])
+    axs[0].scatter(*x1, color='k')
 
     # plot path of f values
-    axs[1].plot(*hist_value, zorder=-1)
+    axs[1].plot(*hist_value, color='k', zorder=-1)
     axs[1].scatter(*hist_value)
-    axs[1].scatter(*func(x0), color='k')
-    axs[1].scatter(*func(x1), color=colors[1])
+    axs[1].scatter(*func(x0), color=colors[1])
+    axs[1].scatter(*func(x1), color='k')
 
     return i, x1, f1
 
@@ -92,6 +92,7 @@ def optim_univar(optim, func, state, xlim, vmin=0, K=100, eps=1e-8, ax=None):
     viz.plot(func, *xlim, zero=vmin, ax=ax, c='k')
     for x, y in zip(hist, hist_value):
         ax.scatter(x, y, zorder=10)
+    ax.scatter(hist[:, -1], hist_value[:, -1], color='k', zorder=10)
 
 def optim_multivar(func, x0, method, ax=None):
     # store initial guess
@@ -114,10 +115,10 @@ def optim_multivar(func, x0, method, ax=None):
         _, ax = plt.subplots()
 
     # plot path of x values
-    ax.plot(*hist, zorder=-1)
+    ax.plot(*hist, color='k', zorder=-1)
     ax.scatter(*hist)
-    ax.scatter(*x0, color='k')
-    ax.scatter(*x1, color=colors[1])
+    ax.scatter(*x0, color=colors[1])
+    ax.scatter(*x1, color='k')
 
     return i, x1, f1
 
