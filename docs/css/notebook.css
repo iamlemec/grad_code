@@ -3,7 +3,8 @@
 @import url("colorful.css");
 
 #container {
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     margin: auto;
     margin-top: 50px;
     margin-bottom: 100px;
@@ -58,4 +59,16 @@ code {
     border-radius: 3px;
     font-size: 110%;
     background-color: rgba(175,184,193,0.2);
+}
+
+@media only screen and (max-width: 803px) {
+
+#container {
+    margin-top: 10px;
+}
+
+.input_area {
+    overflow-x: scroll;
+}
+
 }
