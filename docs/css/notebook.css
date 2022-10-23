@@ -10,6 +10,10 @@
     margin-bottom: 100px;
 }
 
+a {
+    overflow-wrap: break-word;
+}
+
 a.anchor-link {
     display: none;
 }
