@@ -1,16 +1,14 @@
 .RECIPEPREFIX = >
 
 NOTEBOOKS := $(wildcard lecture_*.ipynb)
-CONVERTED := $(NOTEBOOKS:%.ipynb=templates/%.html)
-RENDERED := $(NOTEBOOKS:%.ipynb=docs/%.html)
+CONVERTED := $(NOTEBOOKS:%.ipynb=docs/%.html)
 
-templates/%.html : %.ipynb
-> jupyter-nbconvert --to html --template basic --output $@ $<
+TEMPLATE_OPTS := --TemplateExporter.extra_template_basedirs=nbconvert --template custom
 
-docs/%.html : templates/%.html
-> python3 render.py $(<F) $@
+docs/%.html : %.ipynb
+> jupyter-nbconvert --to html ${TEMPLATE_OPTS} --output $@ $<
 
-all: ${CONVERTED} ${RENDERED}
+all: ${CONVERTED}
 
 clean:
-> rm -f ${CONVERTED} ${RENDERED}
+> rm -f ${CONVERTED}
