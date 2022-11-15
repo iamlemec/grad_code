@@ -1,6 +1,14 @@
 import jax
 import jax.numpy as np
 
+# compile `eig` on CPU to make it work
+cpu, *_ = jax.devices('cpu')
+eig = jax.jit(np.linalg.eig, device=cpu)
+
+# general axis normalizer
+def normed(A, axis=None):
+    return A/np.sum(A, axis=axis, keepdims=True)
+
 # this is just a thin wrapper around SVD (copied from scipy)
 def null_space(A, rcond=None):
     u, s, vh = np.linalg.svd(A, full_matrices=True)
