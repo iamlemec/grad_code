@@ -1,6 +1,6 @@
 .RECIPEPREFIX = >
 
-NOTEBOOKS := $(wildcard lecture_*.ipynb)
+NOTEBOOKS := $(wildcard *.ipynb)
 CONVERTED := $(NOTEBOOKS:%.ipynb=docs/%.html)
 
 TEMPLATE_OPTS := --TemplateExporter.extra_template_basedirs=nbconvert --template custom
