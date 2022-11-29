@@ -1,15 +1,17 @@
 # assignment tools
 
 import jax
+import jax.lax as lax
 import jax.numpy as np
 from functools import partial
+from valjax import optim_secant
 
 # inject variables into object
 def inject(object, params):
     for k, v in params.items():
         setattr(object, k, v)
 
-class ValfuncInterp:
+class Valfunc:
     def __init__(self, par, alg):
         inject(self, par)
         inject(self, alg)
@@ -17,14 +19,6 @@ class ValfuncInterp:
         # precompute
         self.calc_kss()
         self.make_grid()
-
-        # vectorize
-        self.d_bellman_interp = jax.grad(self.bellman_interp, argnums=0)
-        self.v_bellman_interp = jax.vmap(self.bellman_interp, in_axes=(0, 0, None))
-        self.vd_bellman_interp = jax.vmap(self.d_bellman_interp, in_axes=(0, 0, None))
-
-        # optimize
-        self.j_update_step = jax.jit(self.update_step)
 
     # utility function (derivative clipped)
     def util(self, c):
@@ -48,6 +42,57 @@ class ValfuncInterp:
         self.y_grid = self.prod(self.k_grid)
         self.yp_grid = self.y_grid + (1-self.δ)*self.k_grid
 
+class ValfuncGrid(Valfunc):
+    def __init__(self, par, alg):
+        super().__init__(par, alg)
+
+        # optimize
+        self.j_solve = jax.jit(self.solve)
+
+    def make_grid(self):
+        super().make_grid()
+
+        # cross grid for consumption
+        self.cp_grid = self.yp_grid[:,None] - self.k_grid[None,:]
+
+    # bellman equation evaluate
+    def eval_policy(self, vp):
+        return self.util(self.cp_grid) + self.β*vp[None,:]
+
+    # update using grid
+    def update_step(self, v0):
+        v1 = self.eval_policy(v0)
+        return np.max(v1, axis=1)
+
+    # execute interpolation solve
+    def solve(self, K=300):
+        # initial guesses
+        c0 = self.y_grid - self.δ*self.k_grid
+        v = self.util(c0)
+
+        # iterate on update
+        upd = lambda i, vi: self.update_step(vi)
+        v = lax.fori_loop(0, K, upd, v)
+
+        # get optimal policy
+        vk = self.eval_policy(v)
+        ik = np.argmax(vk, axis=1)
+        kp = self.k_grid[ik]
+
+        return v, kp
+
+class ValfuncInterp(Valfunc):
+    def __init__(self, par, alg):
+        super().__init__(par, alg)
+
+        # vectorize
+        self.d_bellman_interp = jax.grad(self.bellman_interp, argnums=0)
+        self.v_bellman_interp = jax.vmap(self.bellman_interp, in_axes=(0, 0, None))
+        self.vd_bellman_interp = jax.vmap(self.d_bellman_interp, in_axes=(0, 0, None))
+
+        # optimize
+        self.j_update_step = jax.jit(self.update_step)
+
     # bellman equation evaluate
     def bellman(self, kp, yp, vp):
         kp1 = np.maximum(0.0, kp)
@@ -59,34 +104,33 @@ class ValfuncInterp:
         return self.bellman(kp, yp, vp)
 
     # update using intpolation
-    def update_step(self, kp, vp):
+    def update_step(self, k0, v0):
         # update policy
-        dvdk = self.vd_bellman_interp(kp, self.yp_grid, vp)
+        dvdk = self.vd_bellman_interp(k0, self.yp_grid, v0)
         dvdk1 = np.clip(dvdk, -1.0, 1.0)
-        k1 = np.clip(kp + self.Δk*dvdk1, self.klo, self.khi)
+        k1 = np.clip(k0 + self.Δk*dvdk1, self.klo, self.khi)
 
         # update value
-        for i in range(10):
-            vx = self.bellman(kp, self.yp_grid, vp)
-            vp = self.Δv*vx + (1-self.Δv)*vp
+        vx = self.bellman(k0, self.yp_grid, v0)
+        v1 = np.clip(self.Δv*vx + (1-self.Δv)*v0, self.vlo, self.vhi)
 
-        return k1, vp
+        return k1, v1
 
     # execute interpolation solve
-    def solve_interp(self, K=3000, per=1000):
+    def solve(self, K=3000, per=1000):
         # initial guesses
         k = self.k_grid
         v = self.util(self.y_grid-self.δ*self.k_grid)
 
         # iterate on update
-        for i in range(K):
+        for i in range(K+1):
             kp, vp = self.j_update_step(k, v)
 
             err_k = np.max(np.abs(kp-k))
             err_v = np.max(np.abs(vp-v))
             err = np.maximum(err_k, err_v)
 
-            if i == 0 or i == K - 1 or i % per == 0:
+            if i == 0 or i == K or i % per == 0:
                 print(i, err_k, err_v)
 
             k, v = kp, vp
