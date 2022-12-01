@@ -9,6 +9,11 @@ eig = jax.jit(np.linalg.eig, device=cpu)
 def normed(A, axis=None):
     return A/np.sum(A, axis=axis, keepdims=True)
 
+# range distributor
+def split_range(x1, x2, bins):
+    return np.maximum(0, np.minimum(x2, bins[1:]) - np.maximum(x1, bins[:-1]))
+split_range_vec = jax.vmap(split_range, in_axes=(0, 0, None))
+
 # this is just a thin wrapper around SVD (copied from scipy)
 def null_space(A, rcond=None):
     u, s, vh = np.linalg.svd(A, full_matrices=True)
