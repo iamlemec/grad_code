@@ -6,7 +6,7 @@ import jax.numpy as np
 import jax.scipy as sp
 
 from valjax import smoothmax, address, interp_index, interp_address
-from .models import normed, split_range_vec, null_space
+from .models import normed, split_range_vec
 
 # default algo params
 alg0 = {
@@ -17,10 +17,15 @@ alg0 = {
     'interp': False,
 }
 
+# default params
+par0 = {
+    'γ': 0.0,
+}
+
 class Capital:
     def __init__(self, par, **alg):
         # store parameters (somewhat hacky)
-        self.__dict__.update({**par, **alg0, **alg})
+        self.__dict__.update({**par0, **par, **alg0, **alg})
 
         # precompute
         self.calc_kss()
@@ -64,6 +69,17 @@ class Capital:
         ent_cdf = sp.stats.norm.cdf(zk_bins)
         self.ent_pmf = normed(np.diff(ent_cdf))
 
+        # diffusion distribution
+        if self.γ > 0.0:
+            k_diff = self.k_bins[None,1:-1] - self.k_grid[:,None]
+            self.dmat = np.diff(np.hstack([
+                np.zeros(self.N)[:,None],
+                sp.stats.norm.cdf(k_diff/self.γ),
+                np.ones(self.N)[:,None],
+            ]), axis=1)
+        else:
+            self.dmat = np.eye(self.N)
+
     # compute full bellman update
     def update_bellman(self, v0):
         # compute objective values
@@ -99,9 +115,10 @@ class Capital:
 
     # make conditional and unconditional transitions matrices
     def make_tmats(self, kp):
-        tmat0 = split_range_vec(
+        tmat0p = split_range_vec(
             kp-0.5*self.k_size, kp+0.5*self.k_size, self.k_bins
         )/self.k_size
+        tmat0 = tmat0p @ self.dmat
         tmat = self.κ*self.ent_pmf[None,:] + (1-self.κ)*tmat0
         return normed(tmat0, axis=1), normed(tmat, axis=1)
 
