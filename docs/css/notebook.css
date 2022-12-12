@@ -30,12 +30,16 @@ div.input_area:hover {
     border-color: #1f6fe767;
 }
 
-.input_prompt, .prompt {
+.input_prompt, .prompt, .output_stderr {
     display: none;
 }
 
 div.output_subarea {
     max-width: 100%;
+}
+
+pre {
+    white-space: pre-wrap;
 }
 
 div.output_png {

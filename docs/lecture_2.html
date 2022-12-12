@@ -1115,7 +1115,7 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So... loops work a little differently in <code>jax</code>. It's okay to write a <code>for</code> loop actually, but not if you want to ultimately <code>jit</code> the thing. First, as we get into more advanced usage, there's a great overview of common "gotchas" in <code>jax</code> here: <a href="https://jax.readthedocs.io/en/latest/notebooks/Common_Gotchas_in_JAX.html">JAX - The Sharp Bits</a>.</p>
+<p>So... loops work a little differently in <code>jax</code>. It's okay to write a <code>for</code> loop actually, but not if you want to ultimately <code>jit</code> the thing. First, as we get into more advanced usage, there's a great overview of common &quot;gotchas&quot; in <code>jax</code> here: <a href="https://jax.readthedocs.io/en/latest/notebooks/Common_Gotchas_in_JAX.html">JAX - The Sharp Bits</a>.</p>
 
 </div>
 </div>
@@ -1311,7 +1311,7 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The return at the end is the final value of the running state, as well as the history of values. Ok, so both of these were designed for fixed length iterations. For variable length iterations, we can use <code>lax.while_loop</code>. This accepts a "condition" function that tells it whether to continue or not and a function that updates the running state.</p>
+<p>The return at the end is the final value of the running state, as well as the history of values. Ok, so both of these were designed for fixed length iterations. For variable length iterations, we can use <code>lax.while_loop</code>. This accepts a &quot;condition&quot; function that tells it whether to continue or not and a function that updates the running state.</p>
 
 </div>
 </div>
@@ -1373,7 +1373,7 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Random numbers work a bit different in <code>jax</code> due to the different needs of Deep Learning folks. You need to generate a "key" first using a "seed" as input (below, <code>42</code> a very common seed). You then pass this key to various random number routines that are similar to those in <code>numpy.random</code>.</p>
+<p>Random numbers work a bit different in <code>jax</code> due to the different needs of Deep Learning folks. You need to generate a &quot;key&quot; first using a &quot;seed&quot; as input (below, <code>42</code> a very common seed). You then pass this key to various random number routines that are similar to those in <code>numpy.random</code>.</p>
 
 </div>
 </div>
@@ -1537,7 +1537,7 @@ renderMathInElement(container, {
 
 
 
- 
+
 
 
 

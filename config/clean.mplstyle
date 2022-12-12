@@ -4,7 +4,7 @@ text.color: 0.15
 
 figure.subplot.bottom: 0.15
 figure.facecolor: white
-figure.dpi: 200
+# figure.dpi: 200
 
 axes.facecolor: white
 axes.edgecolor: black

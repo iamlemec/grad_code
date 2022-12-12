@@ -166,7 +166,7 @@ $$<p>For our purposes, it is sufficient to simply maximize the sum (or mean) of 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we'll make a function to evaluate the mean squared error (MSE) and compute its derivative function. Then we create an "update" function that uses the gradient to generate a new and hopefully better guess for the coefficients. Notice how we use <code>jax.jit</code> as a decorator to automatically compile the update function.</p>
+<p>Now we'll make a function to evaluate the mean squared error (MSE) and compute its derivative function. Then we create an &quot;update&quot; function that uses the gradient to generate a new and hopefully better guess for the coefficients. Notice how we use <code>jax.jit</code> as a decorator to automatically compile the update function.</p>
 
 </div>
 </div>
@@ -302,7 +302,7 @@ height=256
 <p>Not let's level up to a logistic classification problem. This will ultimately be a stepping stone to multi-layer neural networks. Here were going to define a general logistic learning function and then apply it to various types of data. Our likelihood (and objective function) in this case is</p>
 $$
 \log(\mathcal{L}) = \sum_i y_i \log(p_i) + (1-y_i) \log(1-p_i)
-$$<p>where $x_i \in \{0,1\}$ and $p_i$ is the predicted probability of $y_i$ taking the value $1$. In the machine learning world, this objective is called the "binary crossentropy" and is closely related to the K-L divergence. The log probabilities are usually called "logits" and are a linear function of the regressors $x_i$ in this case.</p>
+$$<p>where $x_i \in \{0,1\}$ and $p_i$ is the predicted probability of $y_i$ taking the value $1$. In the machine learning world, this objective is called the &quot;binary crossentropy&quot; and is closely related to the K-L divergence. The log probabilities are usually called &quot;logits&quot; and are a linear function of the regressors $x_i$ in this case.</p>
 
 </div>
 </div>
@@ -911,7 +911,7 @@ height=256
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So we're going to need to basically chain two logistic regressions together into a two layer neural network. First we feed the data into the "hidden" layer (of arbitrary dimension), then the output of the hidden layer is fed to the output layer, which yields a single number. The steps below are roughly analogous to what we did for the logistic regression.</p>
+<p>So we're going to need to basically chain two logistic regressions together into a two layer neural network. First we feed the data into the &quot;hidden&quot; layer (of arbitrary dimension), then the output of the hidden layer is fed to the output layer, which yields a single number. The steps below are roughly analogous to what we did for the logistic regression.</p>
 
 </div>
 </div>
@@ -1204,7 +1204,7 @@ height=256
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>But we also have hidden layers, whose "activations" we can peer into. We need to be a little careful about how we do it, but below you can see how the non-linear shape is generated with the combination of two opposed hyperplanes. So the trained neural network is being kind of smart.</p>
+<p>But we also have hidden layers, whose &quot;activations&quot; we can peer into. We need to be a little careful about how we do it, but below you can see how the non-linear shape is generated with the combination of two opposed hyperplanes. So the trained neural network is being kind of smart.</p>
 
 </div>
 </div>
@@ -1299,7 +1299,7 @@ height=256
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There are a few new concepts here. First, we create an optimizier <code>opt</code>, which in this case is <code>rmsprop</code>, a fairly common and effective one. Then we create a "state" which keeps track of things over time (for instance, a moving average of past gradients). We than use <code>opt.update</code> to update the state and generate increments for our parameters, which we apply with <code>apply_updates</code>, which is nearly identical to our <code>update_coeff</code> function. Note that people in machine learning <em>minimize</em> functions, so we need to negate the gradients we pass (which were generated with maximizing in mind).</p>
+<p>There are a few new concepts here. First, we create an optimizier <code>opt</code>, which in this case is <code>rmsprop</code>, a fairly common and effective one. Then we create a &quot;state&quot; which keeps track of things over time (for instance, a moving average of past gradients). We than use <code>opt.update</code> to update the state and generate increments for our parameters, which we apply with <code>apply_updates</code>, which is nearly identical to our <code>update_coeff</code> function. Note that people in machine learning <em>minimize</em> functions, so we need to negate the gradients we pass (which were generated with maximizing in mind).</p>
 
 </div>
 </div>
@@ -1440,7 +1440,7 @@ height=315
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Creating modular and reusable blocks that we assemble into complex neural networks is the name of the game in deep learning. In the <code>jax</code> world, there is a library called <code>flax</code> that does a lot of the heavy lifting here. There are actually quite a few libraries that implement the "Module" concept in the <code>jax</code> ecosystem. And this idea actually stems originally from <code>pytorch</code> and <code>keras</code>, which builds on top of <code>tensorflow</code>.</p>
+<p>Creating modular and reusable blocks that we assemble into complex neural networks is the name of the game in deep learning. In the <code>jax</code> world, there is a library called <code>flax</code> that does a lot of the heavy lifting here. There are actually quite a few libraries that implement the &quot;Module&quot; concept in the <code>jax</code> ecosystem. And this idea actually stems originally from <code>pytorch</code> and <code>keras</code>, which builds on top of <code>tensorflow</code>.</p>
 
 </div>
 </div>
@@ -1679,7 +1679,7 @@ renderMathInElement(container, {
 
 
 
- 
+
 
 
 
