@@ -6,7 +6,7 @@
 
 <title>lecture_3</title>
 <link href="css/notebook.css" rel="stylesheet">
-<link href="/KaTeX/katex.min.css" rel="stylesheet">
+<link href="/prod/KaTeX/katex.min.css" rel="stylesheet">
 
 
 </head>
@@ -16,14 +16,14 @@
 <div id="container">
 
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=dba70b8e-bd75-41f7-9a41-d2d247e8946e" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Solving-Models-(with-jax)">Solving Models (with <code>jax</code>)<a class="anchor-link" href="#Solving-Models-(with-jax)">&#182;</a></h1>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=96050fed-b49d-41e7-8ef9-9707bcc0cc71" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
@@ -40,7 +40,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=9e6eeba2-965d-461c-a4cf-fc6ecd2b12cd" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
@@ -57,7 +57,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=38f37445-1abe-4cdb-87f8-580309ed98e8" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
@@ -71,7 +71,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=90bba88f-f3f4-412a-a105-5a7a9f6afa6b" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
@@ -86,7 +86,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=2e97d8e7-c360-4a0a-b7f9-7ef1db8f7f6c" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
@@ -99,14 +99,14 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=6ba4910c-90fc-4c05-ac75-63ce3ab8f8b4" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Optimization-with-JAX">Optimization with JAX<a class="anchor-link" href="#Optimization-with-JAX">&#182;</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=bff2116c-df6b-4477-9376-95eb1a71f675" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Optimization typically involves looping in some way, so we need to be a bit careful when using <code>jax</code>. But you can achieve all of the same results with much more flexibility and speed at runtime. Here we're using simple gradient descent for opimization.</p>
@@ -114,14 +114,14 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=b57ef733-1db4-45fd-bb2e-841469639d55" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Simple-Function">Simple Function<a class="anchor-link" href="#Simple-Function">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=0b51bd39-7185-40a2-b383-d83df71d349a" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
@@ -135,7 +135,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=e726d1e8-2f62-476d-a428-8b2def7f5723" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
@@ -151,7 +151,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=b1faa143-42c9-4656-a189-b8efa74de5b8" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
@@ -192,7 +192,7 @@ height=202
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=0dedf219-e8cf-43db-b5fb-c196b5fbec42" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
@@ -212,7 +212,7 @@ height=202
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=f2ee7d5d-6b5f-4ff3-8031-54bb4dc1c1a6" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
@@ -227,7 +227,7 @@ height=202
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=af5598ce-179a-4710-a456-872c1791d417" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
@@ -266,7 +266,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=98248c00-dbfa-4729-8906-9805f63b8192" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
@@ -307,14 +307,14 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=3ad609a8-ae19-497a-9e05-3cfc031261b3" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Parameterized">Parameterized<a class="anchor-link" href="#Parameterized">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=86562bf2-889b-41b2-9bd7-f597d15b4d45" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now let's add in an additional parameter $\alpha$ which influences the optimization</p>
@@ -322,7 +322,7 @@ height=256
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=dda59f0a-7616-40e4-827f-bb7d499db648" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
@@ -338,7 +338,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=7f23799f-a4d7-4c8d-b8f2-6ea5b30118db" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
@@ -359,7 +359,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=ef67fb11-4813-4453-91be-a6715aa8f147" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
@@ -373,7 +373,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=e116b674-62f4-4804-88fa-6c87c9d63bad" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
@@ -412,7 +412,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=54eee2cf-56d6-4083-9a7c-f8b641cb418c" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
@@ -452,7 +452,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=83d8f510-45b7-4cdb-815e-7f743da26728" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can even take the derivative of the optimal solution with respect to $\alpha$, which should always be $1$ in our case since $x^{\ast}(\alpha) = \alpha$.</p>
@@ -460,7 +460,7 @@ height=256
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=c09d95d1-d4fd-4a7a-bf6e-2021d17f8e85" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
@@ -498,14 +498,14 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=7a21f6ca-b7ea-4dd6-be00-75b1d7d449bf" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Value-Functions-With-jax">Value Functions With <code>jax</code><a class="anchor-link" href="#Value-Functions-With-jax">&#182;</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=89a025f9-c4ae-4dd2-afc3-fae567182cf2" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Below is an implementation of simple value function iteration using <code>jax</code> for the neoclassical growth model. This makes use of trees for parameter values and the <code>scan</code> function for iteration. We start by defining parameters and the utility and production functions, as well as constructing the capital grid and finding the analytic steady state.</p>
@@ -513,7 +513,7 @@ height=256
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=cd69e76d-6981-4c8c-9491-577efadf991c" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
@@ -526,7 +526,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=05d2abba-95a9-4682-830d-16a60155f181" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
@@ -542,7 +542,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=c6a7aade-386d-4f85-84f6-e7643684a95e" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
@@ -561,7 +561,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=4730fc18-bb24-42b9-bdf6-c988ec73be2a" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
@@ -599,7 +599,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=90fc4ec8-cc95-4923-8efd-5fc90f7c1cd4" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
@@ -615,7 +615,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=be4aa737-f41c-4293-9495-33d4e9a3cc56" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
@@ -633,7 +633,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=720ff538-945e-42e7-9f58-53f8c7eedf53" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now we define the actual updating rule and the outer solving function.</p>
@@ -641,7 +641,7 @@ height=256
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=1249ab4d-bb41-48a5-8416-7a650a4a6d50" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
@@ -681,7 +681,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=2fec11bc-44d2-4465-a450-cdffd56d014d" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
@@ -720,7 +720,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=e905e6b7-8a74-47bc-bb30-c4654fdd9f93" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now let's time the model and see how the results look!</p>
@@ -728,7 +728,7 @@ height=256
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=fe1800f4-d3b2-4a9e-a492-88bcb0ddd68e" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
@@ -743,7 +743,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=24254419-66c2-46e3-8401-3976b86a481a" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
@@ -775,7 +775,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=871922d8-cc4a-465f-b5dd-3d591c109551" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
@@ -814,7 +814,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=6380f313-8bdc-4345-8fb2-9069acda89ef" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
@@ -855,14 +855,14 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=b649912f-07f1-4bda-9013-110be8a3d3ec" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="State-Distributions">State Distributions<a class="anchor-link" href="#State-Distributions">&#182;</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=16b451e0-c3ac-46b5-ba27-b197e1272fea" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The flip side to solving value functions is constructing state distributions, either as they evolve or in steady state. Let's consider the system described in the lecture slides.</p>
@@ -870,7 +870,7 @@ height=256
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=983d3cf6-562c-47fd-8de8-f0a997158b66" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
@@ -885,7 +885,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=fb97fe47-e730-4f31-a164-97e2ebb94320" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
@@ -904,7 +904,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=1356b812-bb20-4153-bb09-13306532895f" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
@@ -922,7 +922,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=e2592975-171e-4ffb-aa73-3d364314c8d6" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
@@ -962,7 +962,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=a2d47286-287f-4e4a-b9f0-f2d32697379d" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now we need to construct the transition matrices. The non-exit conditional transition matrix is called <code>qstay</code>, while the fully inclusive transition matrix is called <code>qtmat</code>. Notice that it's way easier to write <code>split_range</code> with <code>vmap</code> rather than directly.</p>
@@ -970,7 +970,7 @@ height=256
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=7093340c-7f3d-4305-8182-90d0aee70098" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
@@ -986,7 +986,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=dea67400-2ced-418e-a5ce-e24370bb5f32" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
@@ -1003,7 +1003,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=31b3102a-00b9-4f54-8c84-a089375180d1" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
@@ -1021,7 +1021,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=e926eeb1-1d4e-4b1a-a674-8ff52c46e790" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now let's just use the brute force method of manually iterating on transition matrices. Here we do so for both the no-exit and yes-exit versions. Notice that there is no steady state in the no-exit version.</p>
@@ -1029,7 +1029,7 @@ height=256
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=934930e1-b24d-4a5e-ab4f-bf589153f6d0" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
@@ -1047,7 +1047,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=6c7be94f-f10b-47a4-81cf-1449b862f17a" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
@@ -1089,7 +1089,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=79095f2f-28f4-4cd4-98f7-9a1f0f36536c" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now let's use an eigen-solver to find the eigenvector associated with the unit eigenvalue.</p>
@@ -1097,7 +1097,7 @@ height=256
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=5f4a865f-c43a-44c0-809b-fec0f233327f" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
@@ -1137,7 +1137,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=8d885a28-7fb7-4960-909f-53b101318afd" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Finally, let's find the null space of $A^{\prime} - I$, which is the solution to $x A = x$.</p>
@@ -1145,7 +1145,7 @@ height=256
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=e45deddc-54fe-43f5-8b58-4c8e52859dd1" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
@@ -1184,7 +1184,7 @@ height=256
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div id="cell-id=7a20189f-3a76-43dc-9b4c-6413dfbddb05" class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
@@ -1200,8 +1200,8 @@ height=256
 
 </div>
 
-<script src="/KaTeX/katex.min.js"></script>
-<script src="/KaTeX/contrib/auto-render.min.js"></script>
+<script src="/prod/KaTeX/katex.min.js"></script>
+<script src="/prod/KaTeX/contrib/auto-render.min.js"></script>
 
 <script type="text/javascript">
 

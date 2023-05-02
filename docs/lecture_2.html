@@ -6,7 +6,7 @@
 
 <title>lecture_2</title>
 <link href="css/notebook.css" rel="stylesheet">
-<link href="/KaTeX/katex.min.css" rel="stylesheet">
+<link href="/prod/KaTeX/katex.min.css" rel="stylesheet">
 
 
 </head>
@@ -16,14 +16,14 @@
 <div id="container">
 
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Differentiable-Programming-(with-jax)">Differentiable Programming (with <code>jax</code>)<a class="anchor-link" href="#Differentiable-Programming-(with-jax)">&#182;</a></h1>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
@@ -39,7 +39,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
@@ -56,7 +56,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
@@ -70,7 +70,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
@@ -85,14 +85,14 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="jax-Basics"><code>jax</code> Basics<a class="anchor-link" href="#jax-Basics">&#182;</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Almost all of the <code>numpy</code> API is implemented in <code>jax</code>. Arrays have a device that they are stored on. If you have a supported GPU, it will default to this, otherwise it'll go on the CPU (or a TPU if you're really fancy, but I've never used one). Note that there is the notion of a <strong>platform</strong> which includes <code>cpu</code>, <code>gpu</code>, and <code>tpu</code>. Each platform has a certain number of devices (often just one though).</p>
@@ -100,7 +100,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
@@ -135,7 +135,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
@@ -169,7 +169,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
@@ -205,7 +205,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Arrays also have a <code>dtype</code>, which usually corresponds to those found in regular <code>numpy</code>. However, the defaults can be different and some are not supported on certain devices. The most common such difference is that <code>float64</code> is not supported unless you explicity enable it.</p>
@@ -213,7 +213,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
@@ -253,7 +253,7 @@ float32
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
@@ -287,7 +287,7 @@ float32 float32
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can enable <code>float64</code> by running: <code>jax.config.update('jax_enable_x64', True)</code></p>
@@ -295,14 +295,14 @@ float32 float32
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Scalar-Operations-With-grad">Scalar Operations With <code>grad</code><a class="anchor-link" href="#Scalar-Operations-With-grad">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's start with a scalar-to-scalar function derivatives. You can make a new function that returns the gradient by calling <code>grad</code> on a function.</p>
@@ -310,7 +310,7 @@ float32 float32
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
@@ -346,7 +346,7 @@ float32 float32
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
@@ -381,7 +381,7 @@ float32 float32
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
@@ -416,7 +416,7 @@ float32 float32
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
@@ -451,7 +451,7 @@ float32 float32
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Up until now, we've only looked at functions of one parameter. Going to many parameters is fine, we just need to tell <code>grad</code> which variable to take the derivative with respect to. We do this by specifying the index of the desired parameter or parameters in the <code>argnums</code> flag. If you give it multiple indices, it will return a list of derivatives. The default is <code>argnums=0</code>.</p>
@@ -459,7 +459,7 @@ float32 float32
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
@@ -495,14 +495,14 @@ float32 float32
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Vector-Operations-With-grad-and-jacobian">Vector Operations With <code>grad</code> and <code>jacobian</code><a class="anchor-link" href="#Vector-Operations-With-grad-and-jacobian">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now let's turn to vector-to-scalar functions. Here, calling <code>grad</code> will give you a function that returns a vector with the same size as the input dimension. You don't have to specify the dimensions to <code>jax</code>, it'll figure these out the first time the function actually gets called. Because of this, if <code>jax</code> isn't happy about something, it may not give you an error until you actually try to use the output of <code>grad</code>.</p>
@@ -510,7 +510,7 @@ float32 float32
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
@@ -546,7 +546,7 @@ float32 float32
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
@@ -581,7 +581,7 @@ float32 float32
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
@@ -618,7 +618,7 @@ float32 float32
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
@@ -654,14 +654,14 @@ float32 float32
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Vectorizing-With-vmap">Vectorizing With <code>vmap</code><a class="anchor-link" href="#Vectorizing-With-vmap">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Vectorization is often necessary for performance in Python, especially in <code>jax</code>. Fortunately, we can do this easily with <code>vmap</code>. This function will take a input function and map it along a new dimension of your choice. For instance, you can use it to turn a scalar-to-scalar function into a vector-to-vector function. But there are many more possibilities.</p>
@@ -669,7 +669,7 @@ float32 float32
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
@@ -704,7 +704,7 @@ float32 float32
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
@@ -739,14 +739,14 @@ float32 float32
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Just-In-Time-Compilation-With-jit">Just-In-Time Compilation With <code>jit</code><a class="anchor-link" href="#Just-In-Time-Compilation-With-jit">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is an approach to speeding up code by compiling it just when it is needed (rather than beforehand, like in C or C++). It's used in JavaScript, MATLAB, and other places. Calling <code>jit</code> on a function will return another function that does the same thing but faster. 
@@ -755,7 +755,7 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
@@ -790,7 +790,7 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
@@ -804,7 +804,7 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
@@ -836,7 +836,7 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
@@ -869,7 +869,7 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>On my computer this gives ~300x speed improvement. May vary from CPU to GPU though.</p>
@@ -877,14 +877,14 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Trees-in-jax">Trees in <code>jax</code><a class="anchor-link" href="#Trees-in-jax">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Trees are very cool! They're basically arbitrarily nested <code>dict</code>s and <code>list</code>s whose leaves can be any type. If you've seen JSON before, it's very similar to that. Why are trees cool? Just as <code>numpy</code> lets you perform operations over an entire array at once, trees let you do the same over entire trees as well. This let's you avoid a lot of clunky and error-prone packing and unpacking.</p>
@@ -892,7 +892,7 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
@@ -931,7 +931,7 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
@@ -950,7 +950,7 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
@@ -986,7 +986,7 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Sometimes it's easier to think in scalar terms them vectorize things. Suppose that our model really just operated on some <code>x</code> and <code>y</code> and we want to run the model for many such pairs. Then we can first define a slightly different function in purely scalar terms. I'm also adding in a separate parameter $\alpha$ to make things more interesting</p>
@@ -994,7 +994,7 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
@@ -1009,7 +1009,7 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Then we use <code>vmap</code> to broadcast over the tree <code>d</code>. Below is what we'd write if we're interested in doing 10 distinct parameter sets.</p>
@@ -1017,7 +1017,7 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
@@ -1053,7 +1053,7 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>But sometimes we just wany to vary one parameter at a time. As with <code>grad</code>, we need to tell it which dimensions to operate on, this time using <code>in_axes</code>. But it's a bit more complicated</p>
@@ -1061,7 +1061,7 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
@@ -1097,7 +1097,7 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Notice that <code>in_axes</code> is a list of the same length as the number of function arguments (in this case 1). We then have to mirror the structure of the tree itself to specify that we want to map <code>x</code> over axis 0 and not map <code>y</code> at all.</p>
@@ -1105,14 +1105,14 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Loops-and-Iteration">Loops and Iteration<a class="anchor-link" href="#Loops-and-Iteration">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So... loops work a little differently in <code>jax</code>. It's okay to write a <code>for</code> loop actually, but not if you want to ultimately <code>jit</code> the thing. First, as we get into more advanced usage, there's a great overview of common &quot;gotchas&quot; in <code>jax</code> here: <a href="https://jax.readthedocs.io/en/latest/notebooks/Common_Gotchas_in_JAX.html">JAX - The Sharp Bits</a>.</p>
@@ -1120,7 +1120,7 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
@@ -1138,7 +1138,7 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
@@ -1174,7 +1174,7 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Not a very helpful error message! But basically we tried to use a function argument as the loop bounds and then <code>jit</code> it. One way to take care of this is to specify that <code>n</code> is mostly fixed using <code>static_argnums</code>. This will work but will recompile for each distinct value of <code>n</code> that is seen.</p>
@@ -1182,7 +1182,7 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
@@ -1216,7 +1216,7 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The other way is to use one of the looping tools from <code>lax</code> such as <code>scan</code> or <code>fori_loop</code>. First, let's try it using <code>fori_loop</code></p>
@@ -1224,7 +1224,7 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
@@ -1261,7 +1261,7 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <code>scan</code> function operates similarly, in that it carries a running state, but instead of just getting <code>i</code> at each iteration, you can get a slice of your input data. You also get the whole history of outputs at the end, rather than just the last value. The function you pass should accept a running value (<code>v</code> below) and a state (<code>i</code> below). Either of these can be arbirary tree types.</p>
@@ -1269,7 +1269,7 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
@@ -1308,7 +1308,7 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The return at the end is the final value of the running state, as well as the history of values. Ok, so both of these were designed for fixed length iterations. For variable length iterations, we can use <code>lax.while_loop</code>. This accepts a &quot;condition&quot; function that tells it whether to continue or not and a function that updates the running state.</p>
@@ -1316,7 +1316,7 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
@@ -1355,7 +1355,7 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here we just reimplemented a for loop by including <code>i</code> in the running state and conditioning on it, but you could image the condition being something like a convergence check too.</p>
@@ -1363,14 +1363,14 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Random-Numbers">Random Numbers<a class="anchor-link" href="#Random-Numbers">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Random numbers work a bit different in <code>jax</code> due to the different needs of Deep Learning folks. You need to generate a &quot;key&quot; first using a &quot;seed&quot; as input (below, <code>42</code> a very common seed). You then pass this key to various random number routines that are similar to those in <code>numpy.random</code>.</p>
@@ -1378,7 +1378,7 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
@@ -1414,7 +1414,7 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Notice the same key leads to the same random numbers! So there must be more. To advance your key to something new you can use the <code>split</code> function, which is also deterministic. This will return two new keys.</p>
@@ -1422,7 +1422,7 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
@@ -1454,7 +1454,7 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So one pattern is to keep a running <code>key</code> and generate a new <code>subkey</code> when you need another random number</p>
@@ -1462,7 +1462,7 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
@@ -1495,7 +1495,7 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
@@ -1511,8 +1511,8 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 
 </div>
 
-<script src="/KaTeX/katex.min.js"></script>
-<script src="/KaTeX/contrib/auto-render.min.js"></script>
+<script src="/prod/KaTeX/katex.min.js"></script>
+<script src="/prod/KaTeX/contrib/auto-render.min.js"></script>
 
 <script type="text/javascript">
 

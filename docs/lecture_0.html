@@ -6,7 +6,7 @@
 
 <title>lecture_0</title>
 <link href="css/notebook.css" rel="stylesheet">
-<link href="/KaTeX/katex.min.css" rel="stylesheet">
+<link href="/prod/KaTeX/katex.min.css" rel="stylesheet">
 
 
 </head>
@@ -16,14 +16,14 @@
 <div id="container">
 
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=9ba065b2-5ac6-4e6a-8585-4211851988fa" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Lecture-0:-The-Ecosystem">Lecture 0: The Ecosystem<a class="anchor-link" href="#Lecture-0:-The-Ecosystem">&#182;</a></h1>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=118fb121-9df4-4c09-b802-1431655d0357" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Yes, we're zero indexing!</p>
@@ -31,14 +31,14 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=9c314b04-e950-46ef-9214-57f0c55176e9" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Git">Git<a class="anchor-link" href="#Git">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=63cb3119-cbf9-4097-bb29-560cd77fe56d" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Git is a version control system that runs on your computer. You can <code>commit</code> changes to the repository and it will save a history of these commits, allowing you to reference them or go back to them at any time. GitHub is a hosting service that essentially backs up your Git repositories (when you <code>push</code> to them or <code>pull</code> from them) so that you can acccess them from anywhere and there is a reduced chance of data loss. You can also check out other people's GitHub repository by <code>clone</code>-ing them.</p>
@@ -46,14 +46,14 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=13c8d73f-2c63-4a72-99ee-5c31a287502c" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Python">Python<a class="anchor-link" href="#Python">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=5812829c-c0c5-456b-a3c0-999e26a2dad6" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There are basically two ways to intall Python. One is the &quot;native&quot; way using whatever facilities exist with your operating system (for OSX this would be homebrew), and then using <code>pip</code> to install packages. The other way, which is generally more user-friendly and OSX/Windows friendly is to use the Anaconda distribtuion and <code>conda</code> to install packages.</p>
@@ -61,7 +61,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=adbb2d0e-b483-4f6e-9e2c-51f6bf4d3b32" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The most bare-bones way to run Python is to just execute <code>python</code> in the terminal. Depending on your setup, this might actually run Python 2, which is quite old at this point, so it's often safer to run <code>python3</code> explicitly. Anyway, you'll almost never need to do this. At the very least you'll want to run in a more user friendly environment like <code>IPython</code> by executing <code>ipython3</code>, which is sort of a wrapper around <code>python3</code>.</p>
@@ -69,7 +69,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=887d72d9-525f-444c-9461-18a91b2843ab" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>But even then, most of you will prefer to use Jupyterlab. This is a web-based graphical interface that is primary centered on &quot;notebooks&quot;, which is what you're looking at now basically. It's just a series of cell (code or markdown) that when run produce some kind of output. Notebooks are a way to store the code you've written and the resulting output in one place.</p>
@@ -77,7 +77,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=e5704137-3186-49df-877a-59ead4a82d16" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The other place where Python code might &quot;live&quot; is in Python files, which are just text files with the extension <code>.py</code>. If you have a file named <code>model.py</code>, you can run its contents directly with <code>python3 model.py</code>. If you're in an IPython terminal and you want to run its contents interactively, you can run <code>run -i model.py</code>. Finally, you can use it as a module. In this case you can run the Python command <code>import model</code> and there will be a new variable <code>model</code> that contains any variables defined therein. So if you'd defined <code>abc = 5</code> in <code>model.py</code> then <code>model.abc</code> will be <code>5</code>.</p>
@@ -85,14 +85,14 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=24e71823-f37b-411b-b6ad-633b1605f3c8" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Jupyter">Jupyter<a class="anchor-link" href="#Jupyter">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=3829b12c-af0f-42bc-b0cb-0acb72fc23ce" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Nowadays, you can do almost everything in Jupyterlab. That can be useful, especially if you're working on a remote machine like the Pitt cluster. However, I must emphasize that you shouldn't be doing everything in notebooks. For suffiently complex code, you'll want to put some portions of it proper Python modules (<code>.py</code> files, basically) and import them for usage in a notebook. Thus your notebook will contain mostly high level commands and their resulting outputs.</p>
@@ -100,7 +100,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=f1062877-2ba0-4c9e-9782-752238a0e7b3" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can create a new notebook (<code>.ipynb</code> file) by clicking on the blue &quot;+&quot; on the left and chooseing a Python version (something like 3.9 or higher is recommended). You can also create other file types like Python (<code>.py</code>) or markdown (<code>.md</code>) or open a system terminal. Finally, you can edit any of these files by double clicking on them in the filesystem pane on the left.</p>
@@ -108,14 +108,14 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=b773466f-d162-4a2b-a829-da5eb7adc5ce" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Tips">Tips<a class="anchor-link" href="#Tips">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=9c2fa618-3c47-4525-88b5-adafc6119def" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You'll want to stick mostly to the keyboard. To run a cell, press <code>Shift+Enter</code>. To run a bunch of cells in a row, just hold down <code>Shift</code> and keep pressing <code>Enter</code>. To enter edit mode on the selected cell, press <code>Enter</code>. To exit edit mode on a cell, just press <code>Esc</code>. To interrupt ongoing execution, press <code>i</code> twice. To completely restart a notebook press<code>0</code> twice. Create new cells above or below with <code>a</code> and <code>b</code>.</p>
@@ -123,7 +123,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div id="cell-id=3b3c375d-8b52-4c6d-8e4f-7eb00bcc8178" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can make a cell into a markdown cell by pressing <code>m</code>. Press <code>y</code> to turn it back into a code cell. In markdown mode, you can make headings with one or more <code>#</code>s, amongst other markdown features such as pairs of <code>**</code> for <strong>bold</strong> text. You can also do inline $\LaTeX$-style math with pairs of <code>$</code>, as in $x^2$, or display style math with pairs of <code>$$</code>, as in
@@ -135,8 +135,8 @@ $$ \int_{-\infty}^{\infty} \exp(-x^2) dx = \sqrt{\pi} $$</p>
 
 </div>
 
-<script src="/KaTeX/katex.min.js"></script>
-<script src="/KaTeX/contrib/auto-render.min.js"></script>
+<script src="/prod/KaTeX/katex.min.js"></script>
+<script src="/prod/KaTeX/contrib/auto-render.min.js"></script>
 
 <script type="text/javascript">
 
