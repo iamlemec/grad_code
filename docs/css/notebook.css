@@ -69,6 +69,23 @@ code {
     background-color: rgba(175,184,193,0.2);
 }
 
+table.dataframe {
+    margin: auto;
+    border-collapse: collapse;
+    border: 0;
+}
+
+table.dataframe th, table.dataframe td {
+    padding: 5px;
+    border: 0;
+    border-bottom: 1px solid #CCC;
+}
+
+table.dataframe thead th {
+    border-bottom: 2px solid black;
+    text-align: left;
+}
+
 @media only screen and (max-width: 803px) {
 
 #container {
