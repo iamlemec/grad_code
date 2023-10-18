@@ -75,15 +75,61 @@ table.dataframe {
     border: 0;
 }
 
-table.dataframe th, table.dataframe td {
-    padding: 5px;
+table.dataframe thead th,
+table.dataframe tbody td,
+table.dataframe tbody th {
+    padding: 10px;
     border: 0;
-    border-bottom: 1px solid #CCC;
+}
+
+table.dataframe tbody tr:not(:first-child) th,
+table.dataframe tbody tr:not(:first-child) td {
+    border-top: 1px solid #CCC;
+}
+
+table.dataframe tbody tr:last-child td,
+table.dataframe tbody tr:last-child th,
+table.dataframe thead th {
+    border-bottom: 1px solid black;
 }
 
 table.dataframe thead th {
-    border-bottom: 2px solid black;
+    text-align: center;
+}
+
+table.dataframe tbody td,
+table.dataframe tbody th {
     text-align: left;
+}
+
+table.simpletable {
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+table.simpletable caption {
+    font-size: 110%;
+    font-weight: 600;
+    margin: 10px;
+}
+
+table.simpletable tbody th {
+    font-weight: 600;
+}
+
+table.simpletable tbody th,
+table.simpletable tbody td {
+    text-align: right;
+    padding: 5px 20px;
+    border: 1px solid #DDD;
+}
+
+table.simpletable tr {
+    border-bottom: 1px solid #DDD;
+}
+
+table.simpletable tr:nth-child(2n) {
+    background-color: #EEE;
 }
 
 @media only screen and (max-width: 803px) {
