@@ -1,18 +1,13 @@
 <!DOCTYPE html>
+
 <html>
-
-<head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>lecture_2</title>
-<link href="css/notebook.css" rel="stylesheet">
-<link href="/prod/KaTeX/katex.min.css" rel="stylesheet">
-
-
+<link href="css/notebook.css" rel="stylesheet"/>
+<link href="/prod/KaTeX/katex.min.css" rel="stylesheet"/>
 </head>
-
 <body>
-
 <div id="container">
 
 
@@ -25,66 +20,54 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">jax</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">jax</span>
 <span class="kn">import</span> <span class="nn">jax.numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">jax.lax</span> <span class="k">as</span> <span class="nn">lax</span>
 <span class="kn">import</span> <span class="nn">jax.scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># configure matplotlib output</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># configure matplotlib output</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
-<span class="n">mpl</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;config/clean.mplstyle&#39;</span><span class="p">)</span> <span class="c1"># this loads my personal plotting settings</span>
-<span class="n">col</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.prop_cycle&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">by_key</span><span class="p">()[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'config/clean.mplstyle'</span><span class="p">)</span> <span class="c1"># this loads my personal plotting settings</span>
+<span class="n">col</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'axes.prop_cycle'</span><span class="p">]</span><span class="o">.</span><span class="n">by_key</span><span class="p">()[</span><span class="s1">'color'</span><span class="p">]</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># if you have an HD display</span>
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># if you have an HD display</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># some warnings can get annoying</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># some warnings can get annoying</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -102,7 +85,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="jax-Basics"><code>jax</code> Basics<a class="anchor-link" href="#jax-Basics">&#182;</a></h2>
+<h2 id="jax-Basics"><code>jax</code> Basics<a class="anchor-link" href="#jax-Basics">¶</a></h2>
 </div>
 </div>
 </div>
@@ -110,7 +93,6 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Almost all of the <code>numpy</code> API is implemented in <code>jax</code>. Arrays have a device that they are stored on. If you have a supported GPU, it will default to this, otherwise it'll go on the CPU (or a TPU if you're really fancy, but I've never used one). Note that there is the notion of a <strong>platform</strong> which includes <code>cpu</code>, <code>gpu</code>, and <code>tpu</code>. Each platform has a certain number of devices (often just one though).</p>
-
 </div>
 </div>
 </div>
@@ -118,20 +100,16 @@
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># the output here will depend on your setup (we&#39;ll be using this &quot;x&quot; a lot below too)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># the output here will depend on your setup (we'll be using this "x" a lot below too)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
 <span class="n">x</span><span class="o">.</span><span class="n">device</span><span class="p">()</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
 
     <div class="prompt output_prompt">Out[6]:</div>
@@ -142,66 +120,49 @@
 <div class="output_text output_subarea output_execute_result">
 <pre>StreamExecutorGpuDevice(id=0, process_index=0, slice_index=0)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># you can print out available devices</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">devices</span><span class="p">(</span><span class="s1">&#39;cpu&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">devices</span><span class="p">(</span><span class="s1">&#39;gpu&#39;</span><span class="p">))</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># you can print out available devices</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">devices</span><span class="p">(</span><span class="s1">'cpu'</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">devices</span><span class="p">(</span><span class="s1">'gpu'</span><span class="p">))</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[CpuDevice(id=0)]
 [StreamExecutorGpuDevice(id=0, process_index=0, slice_index=0)]
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># you can send data between devices</span>
-<span class="n">cpu0</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">devices</span><span class="p">(</span><span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># you can send data between devices</span>
+<span class="n">cpu0</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">devices</span><span class="p">(</span><span class="s1">'cpu'</span><span class="p">)</span>
 <span class="n">xc</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">device_put</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cpu0</span><span class="p">)</span>
 <span class="n">xc</span><span class="o">.</span><span class="n">device</span><span class="p">()</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
 
     <div class="prompt output_prompt">Out[8]:</div>
@@ -212,18 +173,13 @@
 <div class="output_text output_subarea output_execute_result">
 <pre>CpuDevice(id=0)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Arrays also have a <code>dtype</code>, which usually corresponds to those found in regular <code>numpy</code>. However, the defaults can be different and some are not supported on certain devices. The most common such difference is that <code>float64</code> is not supported unless you explicity enable it.</p>
-
 </div>
 </div>
 </div>
@@ -231,28 +187,21 @@
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create some arrays</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># create some arrays</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'float32'</span><span class="p">)</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'float32'</span><span class="p">)</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>int32
 float32
@@ -262,57 +211,45 @@ float32
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># should still be all float32</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">xc</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">xc</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># should still be all float32</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'float64'</span><span class="p">)</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">xc</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">xc</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'float64'</span><span class="p">)</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>float32 float32
 float32 float32
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can enable <code>float64</code> by running: <code>jax.config.update('jax_enable_x64', True)</code></p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Scalar-Operations-With-grad">Scalar Operations With <code>grad</code><a class="anchor-link" href="#Scalar-Operations-With-grad">&#182;</a></h3>
+<h3 id="Scalar-Operations-With-grad">Scalar Operations With <code>grad</code><a class="anchor-link" href="#Scalar-Operations-With-grad">¶</a></h3>
 </div>
 </div>
 </div>
@@ -320,7 +257,6 @@ float32 float32
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's start with a scalar-to-scalar function derivatives. You can make a new function that returns the gradient by calling <code>grad</code> on a function.</p>
-
 </div>
 </div>
 </div>
@@ -328,21 +264,17 @@ float32 float32
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># define a simple function (can be lambda too)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># define a simple function (can be lambda too)</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">f</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
 
     <div class="prompt output_prompt">Out[11]:</div>
@@ -353,31 +285,23 @@ float32 float32
 <div class="output_text output_subarea output_execute_result">
 <pre>9.0</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># take the gradient (derivative)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># take the gradient (derivative)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="n">df</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
 
     <div class="prompt output_prompt">Out[12]:</div>
@@ -423,53 +347,39 @@ float32 float32
 <div class="output_text output_subarea output_execute_result">
 <pre>DeviceArray(2., dtype=float32, weak_type=True)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># you need to make sure your inputs are floats</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># you need to make sure your inputs are floats</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">df</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>grad requires real- or complex-valued inputs (input dtype that is a sub-dtype of np.inexact), but got int32. If you want to use Boolean- or integer-valued inputs, use vjp or set allow_int to True.
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Up until now, we've only looked at functions of one parameter. Going to many parameters is fine, we just need to tell <code>grad</code> which variable to take the derivative with respect to. We do this by specifying the index of the desired parameter or parameters in the <code>argnums</code> flag. If you give it multiple indices, it will return a list of derivatives. The default is <code>argnums=0</code>.</p>
-
 </div>
 </div>
 </div>
@@ -477,21 +387,17 @@ float32 float32
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">y</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="mi">3</span>
 <span class="n">dg</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">argnums</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">dg</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
 
     <div class="prompt output_prompt">Out[15]:</div>
@@ -502,17 +408,13 @@ float32 float32
 <div class="output_text output_subarea output_execute_result">
 <pre>DeviceArray(58., dtype=float32, weak_type=True)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Vector-Operations-With-grad-and-jacobian">Vector Operations With <code>grad</code> and <code>jacobian</code><a class="anchor-link" href="#Vector-Operations-With-grad-and-jacobian">&#182;</a></h3>
+<h3 id="Vector-Operations-With-grad-and-jacobian">Vector Operations With <code>grad</code> and <code>jacobian</code><a class="anchor-link" href="#Vector-Operations-With-grad-and-jacobian">¶</a></h3>
 </div>
 </div>
 </div>
@@ -520,7 +422,6 @@ float32 float32
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now let's turn to vector-to-scalar functions. Here, calling <code>grad</code> will give you a function that returns a vector with the same size as the input dimension. You don't have to specify the dimensions to <code>jax</code>, it'll figure these out the first time the function actually gets called. Because of this, if <code>jax</code> isn't happy about something, it may not give you an error until you actually try to use the output of <code>grad</code>.</p>
-
 </div>
 </div>
 </div>
@@ -528,21 +429,17 @@ float32 float32
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># the second term is just to add some complexity</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># the second term is just to add some complexity</span>
 <span class="k">def</span> <span class="nf">fv</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">fv</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
 
     <div class="prompt output_prompt">Out[16]:</div>
@@ -553,31 +450,23 @@ float32 float32
 <div class="output_text output_subarea output_execute_result">
 <pre>DeviceArray(20., dtype=float32)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we use the &quot;x&quot; defined above as a test input</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># we use the "x" defined above as a test input</span>
 <span class="n">dfv</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">fv</span><span class="p">)</span>
 <span class="n">dfv</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
 
     <div class="prompt output_prompt">Out[17]:</div>
@@ -625,53 +514,40 @@ float32 float32
              [0., 2., 1.],
              [0., 1., 2.]], dtype=float32)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># you can&#39;t use grad on vector-return functions! but maybe we can find another way...</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># you can't use grad on vector-return functions! but maybe we can find another way...</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">dfe</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">dfe</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Gradient only defined for scalar-output functions. Output had shape: (3,).
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Vectorizing-With-vmap">Vectorizing With <code>vmap</code><a class="anchor-link" href="#Vectorizing-With-vmap">&#182;</a></h3>
+<h3 id="Vectorizing-With-vmap">Vectorizing With <code>vmap</code><a class="anchor-link" href="#Vectorizing-With-vmap">¶</a></h3>
 </div>
 </div>
 </div>
@@ -679,7 +555,6 @@ float32 float32
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Vectorization is often necessary for performance in Python, especially in <code>jax</code>. Fortunately, we can do this easily with <code>vmap</code>. This function will take a input function and map it along a new dimension of your choice. For instance, you can use it to turn a scalar-to-scalar function into a vector-to-vector function. But there are many more possibilities.</p>
-
 </div>
 </div>
 </div>
@@ -687,20 +562,16 @@ float32 float32
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># the most basic usage on the &quot;f&quot; defined above</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># the most basic usage on the "f" defined above</span>
 <span class="n">fv2</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">vmap</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="n">fv2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
 
     <div class="prompt output_prompt">Out[20]:</div>
@@ -711,38 +582,25 @@ float32 float32
 <div class="output_text output_subarea output_execute_result">
 <pre>DeviceArray([1., 4., 9.], dtype=float32)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># now we can do the element-by-element gradient of a vector-return function</span>
 <span class="n">dfv2</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">vmap</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
 <span class="n">dfv2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[21]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[21]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>DeviceArray([2., 4., 6.], dtype=float32)</pre>
 </div>
@@ -797,104 +655,78 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 <div class="output_text output_subarea output_execute_result">
 <pre>DeviceArray([2., 7., 8.], dtype=float32)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># give it a much bigger vector for testing</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># give it a much bigger vector for testing</span>
 <span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mi">100000</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># first do the un-jit-ed version</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># first do the un-jit-ed version</span>
 <span class="o">%</span><span class="k">timeit</span> -n 100 dfv(x2)
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>3.15 ms ± 808 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># now the jitted version (run twice for true comparison)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># now the jitted version (run twice for true comparison)</span>
 <span class="o">%</span><span class="k">timeit</span> -n 100 jdfv(x2)
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>The slowest run took 31.41 times longer than the fastest. This could mean that an intermediate result is being cached.
 57.3 µs ± 113 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>On my computer this gives ~300x speed improvement. May vary from CPU to GPU though.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Trees-in-jax">Trees in <code>jax</code><a class="anchor-link" href="#Trees-in-jax">&#182;</a></h3>
+<h3 id="Trees-in-jax">Trees in <code>jax</code><a class="anchor-link" href="#Trees-in-jax">¶</a></h3>
 </div>
 </div>
 </div>
@@ -902,7 +734,6 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Trees are very cool! They're basically arbitrarily nested <code>dict</code>s and <code>list</code>s whose leaves can be any type. If you've seen JSON before, it's very similar to that. Why are trees cool? Just as <code>numpy</code> lets you perform operations over an entire array at once, trees let you do the same over entire trees as well. This let's you avoid a lot of clunky and error-prone packing and unpacking.</p>
-
 </div>
 </div>
 </div>
@@ -910,23 +741,19 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># first let&#39;s define a very simple tree, which is just a dict of arrays</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># first let's define a very simple tree, which is just a dict of arrays</span>
 <span class="n">xd</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
-    <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">19.0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="s1">'x'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+    <span class="s1">'y'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">19.0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
 <span class="p">}</span>
 <span class="n">xd</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
 
     <div class="prompt output_prompt">Out[26]:</div>
@@ -935,53 +762,41 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;x&#39;: DeviceArray([1., 2., 3., 4., 5.], dtype=float32),
- &#39;y&#39;: DeviceArray([10., 11., 12., 13., 14., 15., 16., 17., 18., 19.], dtype=float32)}</pre>
-</div>
-
-</div>
-
+<pre>{'x': DeviceArray([1., 2., 3., 4., 5.], dtype=float32),
+ 'y': DeviceArray([10., 11., 12., 13., 14., 15., 16., 17., 18., 19.], dtype=float32)}</pre>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># here&#39;s a function that operates on such a tree</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># here's a function that operates on such a tree</span>
 <span class="c1"># you could imagine specifying a model like this</span>
 <span class="c1"># where the input is a dict of parameters or data points</span>
 <span class="k">def</span> <span class="nf">ft</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
-    <span class="n">xsum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">ysum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">xsum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">'x'</span><span class="p">]</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">ysum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">'y'</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">xsum</span> <span class="o">+</span> <span class="n">ysum</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># now we can take a grad with respect to a tree and get a tree of the same shape back!</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># now we can take a grad with respect to a tree and get a tree of the same shape back!</span>
 <span class="n">dft</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">ft</span><span class="p">)</span>
 <span class="n">dft</span><span class="p">(</span><span class="n">xd</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
 
     <div class="prompt output_prompt">Out[28]:</div>
@@ -990,21 +805,15 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;x&#39;: DeviceArray([ 3., 12., 27., 48., 75.], dtype=float32),
- &#39;y&#39;: DeviceArray([20., 22., 24., 26., 28., 30., 32., 34., 36., 38.], dtype=float32)}</pre>
-</div>
-
-</div>
-
+<pre>{'x': DeviceArray([ 3., 12., 27., 48., 75.], dtype=float32),
+ 'y': DeviceArray([20., 22., 24., 26., 28., 30., 32., 34., 36., 38.], dtype=float32)}</pre>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Sometimes it's easier to think in scalar terms them vectorize things. Suppose that our model really just operated on some <code>x</code> and <code>y</code> and we want to run the model for many such pairs. Then we can first define a slightly different function in purely scalar terms. I'm also adding in a separate parameter $\alpha$ to make things more interesting</p>
-
 </div>
 </div>
 </div>
@@ -1012,22 +821,18 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fts</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
-    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fts</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s1">'y'</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Then we use <code>vmap</code> to broadcast over the tree <code>d</code>. Below is what we'd write if we're interested in doing 10 distinct parameter sets.</p>
-
 </div>
 </div>
 </div>
@@ -1035,20 +840,16 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xd1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)}</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">xd1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'x'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="s1">'y'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)}</span>
 <span class="n">ftv1</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">vmap</span><span class="p">(</span><span class="n">fts</span><span class="p">)</span>
 <span class="n">ftv1</span><span class="p">(</span><span class="n">xd1</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
 
     <div class="prompt output_prompt">Out[30]:</div>
@@ -1104,33 +905,27 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 <pre>DeviceArray([4.       , 4.001372 , 4.010974 , 4.037037 , 4.0877914,
              4.171468 , 4.296296 , 4.4705076, 4.702332 , 5.       ],            dtype=float32)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Notice that <code>in_axes</code> is a list of the same length as the number of function arguments (in this case 1). We then have to mirror the structure of the tree itself to specify that we want to map <code>x</code> over axis 0 and not map <code>y</code> at all.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Loops-and-Iteration">Loops and Iteration<a class="anchor-link" href="#Loops-and-Iteration">&#182;</a></h3>
+<h3 id="Loops-and-Iteration">Loops and Iteration<a class="anchor-link" href="#Loops-and-Iteration">¶</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So... loops work a little differently in <code>jax</code>. It's okay to write a <code>for</code> loop actually, but not if you want to ultimately <code>jit</code> the thing. First, as we get into more advanced usage, there's a great overview of common &quot;gotchas&quot; in <code>jax</code> here: <a href="https://jax.readthedocs.io/en/latest/notebooks/Common_Gotchas_in_JAX.html">JAX - The Sharp Bits</a>.</p>
-
+<p>So... loops work a little differently in <code>jax</code>. It's okay to write a <code>for</code> loop actually, but not if you want to ultimately <code>jit</code> the thing. First, as we get into more advanced usage, there's a great overview of common "gotchas" in <code>jax</code> here: <a href="https://jax.readthedocs.io/en/latest/notebooks/Common_Gotchas_in_JAX.html">JAX - The Sharp Bits</a>.</p>
 </div>
 </div>
 </div>
@@ -1138,97 +933,71 @@ As with <code>grad</code>, it only actually does the compilation when you run th
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># very slow way to compute x**n</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># very slow way to compute x**n</span>
 <span class="k">def</span> <span class="nf">fl</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="n">out</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
         <span class="n">out</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">out</span>
     <span class="k">return</span> <span class="n">out</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">jfl</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">(</span><span class="n">fl</span><span class="p">)</span>
     <span class="n">jfl</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>The __index__() method was called on the JAX Tracer object Traced&lt;ShapedArray(int32[], weak_type=True)&gt;with&lt;DynamicJaxprTrace(level=0/1)&gt;
 See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerConversionError
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Not a very helpful error message! But basically we tried to use a function argument as the loop bounds and then <code>jit</code> it. One way to take care of this is to specify that <code>n</code> is mostly fixed using <code>static_argnums</code>. This will work but will recompile for each distinct value of <code>n</code> that is seen.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In [34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">jfl</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">(</span><span class="n">fl</span><span class="p">,</span> <span class="n">static_argnums</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">jfl</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[34]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[34]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>DeviceArray(8., dtype=float32, weak_type=True)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -1279,7 +1048,6 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <code>scan</code> function operates similarly, in that it carries a running state, but instead of just getting <code>i</code> at each iteration, you can get a slice of your input data. You also get the whole history of outputs at the end, rather than just the last value. The function you pass should accept a running value (<code>v</code> below) and a state (<code>i</code> below). Either of these can be arbirary tree types.</p>
-
 </div>
 </div>
 </div>
@@ -1287,23 +1055,19 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fl_scan</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fl_scan</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="n">fl_x</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">v</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">v</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">v</span><span class="p">)</span>
     <span class="n">tvec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">lax</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="n">fl_x</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">tvec</span><span class="p">)</span>
 <span class="n">jfl_scan</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">(</span><span class="n">fl_scan</span><span class="p">,</span> <span class="n">static_argnums</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">jfl_scan</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
 
     <div class="prompt output_prompt">Out[36]:</div>
@@ -1315,18 +1079,13 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 <pre>(DeviceArray(8., dtype=float32, weak_type=True),
  DeviceArray([2., 4., 8.], dtype=float32, weak_type=True))</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The return at the end is the final value of the running state, as well as the history of values. Ok, so both of these were designed for fixed length iterations. For variable length iterations, we can use <code>lax.while_loop</code>. This accepts a &quot;condition&quot; function that tells it whether to continue or not and a function that updates the running state.</p>
-
+<p>The return at the end is the final value of the running state, as well as the history of values. Ok, so both of these were designed for fixed length iterations. For variable length iterations, we can use <code>lax.while_loop</code>. This accepts a "condition" function that tells it whether to continue or not and a function that updates the running state.</p>
 </div>
 </div>
 </div>
@@ -1334,23 +1093,19 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fl_while</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fl_while</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="n">f_cond</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">iv</span><span class="p">:</span> <span class="n">iv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">n</span>
     <span class="n">fl_x</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">iv</span><span class="p">:</span> <span class="p">(</span><span class="n">iv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">iv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">lax</span><span class="o">.</span><span class="n">while_loop</span><span class="p">(</span><span class="n">f_cond</span><span class="p">,</span> <span class="n">fl_x</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
 <span class="n">jfl_while</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">(</span><span class="n">fl_while</span><span class="p">)</span>
 <span class="n">jfl_while</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
 
     <div class="prompt output_prompt">Out[37]:</div>
@@ -1362,33 +1117,27 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 <pre>(DeviceArray(3, dtype=int32, weak_type=True),
  DeviceArray(8., dtype=float32, weak_type=True))</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here we just reimplemented a for loop by including <code>i</code> in the running state and conditioning on it, but you could image the condition being something like a convergence check too.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Random-Numbers">Random Numbers<a class="anchor-link" href="#Random-Numbers">&#182;</a></h3>
+<h3 id="Random-Numbers">Random Numbers<a class="anchor-link" href="#Random-Numbers">¶</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Random numbers work a bit different in <code>jax</code> due to the different needs of Deep Learning folks. You need to generate a &quot;key&quot; first using a &quot;seed&quot; as input (below, <code>42</code> a very common seed). You then pass this key to various random number routines that are similar to those in <code>numpy.random</code>.</p>
-
+<p>Random numbers work a bit different in <code>jax</code> due to the different needs of Deep Learning folks. You need to generate a "key" first using a "seed" as input (below, <code>42</code> a very common seed). You then pass this key to various random number routines that are similar to those in <code>numpy.random</code>.</p>
 </div>
 </div>
 </div>
@@ -1396,43 +1145,33 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">PRNGKey</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">PRNGKey</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">r1</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 <span class="n">r2</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[ 0 42]
 -0.18471177 -0.18471177
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Notice the same key leads to the same random numbers! So there must be more. To advance your key to something new you can use the <code>split</code> function, which is also deterministic. This will return two new keys.</p>
-
 </div>
 </div>
 </div>
@@ -1440,39 +1179,29 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">key</span><span class="p">,</span> <span class="n">subkey</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">key</span><span class="p">,</span> <span class="n">subkey</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">subkey</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[2465931498 3679230171] [255383827 267815257]
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So one pattern is to keep a running <code>key</code> and generate a new <code>subkey</code> when you need another random number</p>
-
 </div>
 </div>
 </div>
@@ -1480,18 +1209,14 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">subkey</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,))</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">subkey</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,))</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
 
     <div class="prompt output_prompt">Out[40]:</div>
@@ -1502,12 +1227,8 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerIntegerCon
 <div class="output_text output_subarea output_execute_result">
 <pre>DeviceArray([0.2899989 , 0.82748747, 0.22911513, 0.2819779 , 0.8697449 ],            dtype=float32)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -2596,23 +2317,18 @@ height=344
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-
 </div>
-
+</div>
 <script src="/prod/KaTeX/katex.min.js"></script>
 <script src="/prod/KaTeX/contrib/auto-render.min.js"></script>
-
 <script type="text/javascript">
 
 // katex config
@@ -2630,15 +2346,5 @@ renderMathInElement(container, {
 });
 
 </script>
-
 </body>
-
-
-
-
-
-
-
-
 </html>
-
