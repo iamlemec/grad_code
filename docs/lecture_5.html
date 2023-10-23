@@ -16,14 +16,14 @@
 <div id="container">
 
 
-<div id="cell-id=96bc4aa7-9a2c-46f9-8746-14b37fab2b49" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Text-Analysis-&amp;-Deep-Learning">Text Analysis &amp; Deep Learning<a class="anchor-link" href="#Text-Analysis-&amp;-Deep-Learning">&#182;</a></h1>
 </div>
 </div>
 </div>
-<div id="cell-id=7e6bb58c-9e9b-47d1-997c-dbd52012b6d7" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
@@ -41,7 +41,7 @@
 </div>
 
 </div>
-<div id="cell-id=bce45a27-146c-4ddd-9a7d-8664c51bc688" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
@@ -59,7 +59,7 @@
 </div>
 
 </div>
-<div id="cell-id=657c5963-fd6b-47b3-87be-c2acd5befce9" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
@@ -73,7 +73,7 @@
 </div>
 
 </div>
-<div id="cell-id=7b38cf4a-f8a6-4b0f-b779-69425cbb56ef" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
@@ -88,14 +88,14 @@
 </div>
 
 </div>
-<div id="cell-id=bb5722d1-a2bb-48f3-a9e2-b02113493fdb" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="PyTorch-(torch)">PyTorch (<code>torch</code>)<a class="anchor-link" href="#PyTorch-(torch)">&#182;</a></h2>
 </div>
 </div>
 </div>
-<div id="cell-id=7b9cd576-3e08-423e-ba43-e9b4f4643aa2" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now we're moving on to <code>torch</code>, a very popular machine learning framework, probably the most popular nowadays. Like <code>jax</code>, torch implements an interface very similar to that of <code>numpy</code>. However, instead of being basically a drop in replacement, there are some differences and all the functions are exposed directly in the top-level <code>torch</code> module.</p>
@@ -104,7 +104,7 @@
 </div>
 </div>
 </div>
-<div id="cell-id=489462ba-8d4f-424c-851e-60ba2bae73a6" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
@@ -150,7 +150,7 @@
 </div>
 
 </div>
-<div id="cell-id=8d625f59-056a-4137-8300-8f49960dc908" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As an example, in <code>numpy</code> and <code>jax</code>, you can take the mean of an integer or boolean array. However, in <code>torch</code> this will throw an error, as <code>mean</code> would then return a number of a different type (<code>float</code>). Here's an example</p>
@@ -158,7 +158,7 @@
 </div>
 </div>
 </div>
-<div id="cell-id=a5ad3b83-f468-4cbe-91ee-c14cf2ef1f89" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
@@ -193,7 +193,7 @@
 </div>
 
 </div>
-<div id="cell-id=34c2b888-d9b5-4455-acb4-4690b6758481" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We'll want to find the mean of some boolean arrays below, so let's define a convenience function. This uses the <code>to</code> function, which allows you to mutate properties of a <code>tensor</code> such as <code>device</code> or <code>dtype</code>. Also note that below we use chaining of functions on tensors, which is quite common in <code>torch</code> world, rather than top-level <code>torch</code> functions.</p>
@@ -201,7 +201,7 @@
 </div>
 </div>
 </div>
-<div id="cell-id=feb9254b-20ac-426f-9bdd-2dbbae3ce487" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
@@ -214,14 +214,14 @@
 </div>
 
 </div>
-<div id="cell-id=117d903c-ca27-4cd3-8992-cf02be76464e" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Neural-Classifier">Neural Classifier<a class="anchor-link" href="#Neural-Classifier">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div id="cell-id=b2c6f907-6d39-45cb-98c0-981a7cf68070" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>First let's reimplement the neural classifier model from last lecture in <code>torch</code>. The data generation is nearly identical to before. Note that <code>categ</code> is a boolean but is encoded as an <code>int</code> here. After generating the raw data, we pass it to <code>TensorDataset</code> to create a single dataset object. This way we don't have to carry around multiple tensors. Then we pass this to <code>DataLoader</code>, which takes care of things like randomly shuffling the data and making batches. If you use the dataloader object as an iterator, it will return batches of <code>space</code>/<code>categ</code> pairs.</p>
@@ -229,7 +229,7 @@
 </div>
 </div>
 </div>
-<div id="cell-id=3bc09f90-c38b-47d1-bb1e-774e1f5d60ee" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
@@ -245,7 +245,7 @@
 </div>
 
 </div>
-<div id="cell-id=898224e9-6396-4193-8038-7f479ecadfe9" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
@@ -262,7 +262,7 @@
 </div>
 
 </div>
-<div id="cell-id=eaba880e-8cfa-410f-bf8b-1eab83e8a978" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
@@ -277,7 +277,7 @@
 </div>
 
 </div>
-<div id="cell-id=9047f1ed-5cea-4e65-9872-d10eaed03af2" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now let's create the actual model, which is a <code>Module</code> object. This looks very similar to the <code>flax</code> notation. In this framework, any setup like layer creation is done in <code>__init__</code>, while the actual prediction is done in the <code>forward</code> function. Notice that here we also return a pair of logits that defines the probabilities of the respective outcomes (<code>0</code> and <code>1</code>). Sadly, we don't have trees in <code>torch</code> world, so we just make a <code>tensor</code> of stats.</p>
@@ -285,7 +285,7 @@
 </div>
 </div>
 </div>
-<div id="cell-id=c283b585-7c2d-497f-8918-07d069eb2005" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
@@ -309,7 +309,7 @@
 </div>
 
 </div>
-<div id="cell-id=1b05bc91-25a2-472b-abeb-1397537716e6" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
@@ -329,7 +329,7 @@
 </div>
 
 </div>
-<div id="cell-id=fa970551-5158-41cc-86d2-7b5bc35f5d7e" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now let's run it! There's a lot going on in this cell. You can see it's not so simple and elegant as in <code>jax</code>. Some of this is for the sake of performance. We don't have to do anything like <code>jit</code> here, but things are still pretty fast, and the cost is slightly clunkier notation. There are two primary differences below. One is this code block:</p>
@@ -343,7 +343,7 @@
 </div>
 </div>
 </div>
-<div id="cell-id=480d2631-bf45-4286-90e9-494768f2b8b7" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
@@ -420,14 +420,14 @@ height=274
 </div>
 
 </div>
-<div id="cell-id=53cc2c4b-b5f9-4322-a3e5-b799740e9611" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Neural-Trader">Neural Trader<a class="anchor-link" href="#Neural-Trader">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div id="cell-id=db57539c-1e6c-472e-8003-7f8f1e9783eb" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Okay, time to make some money!! We're going to generate some data on &quot;returns&quot;, which are just random normals, which may or may not have a predictable component. There is a single security, so our choice is what fraction of our money to invest in each period. We're assuming we can only take &quot;long&quot; positions, so this is a number $s \in [0,1]$. Our input data is the history of the past $L$ realizations of returns. From a single series of length $T$, we can turn this into a set of $T-L$ overlapping history/outcome pairs.</p>
@@ -435,7 +435,7 @@ height=274
 </div>
 </div>
 </div>
-<div id="cell-id=21e63899-dc33-4a6b-9482-3c51f73813ee" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
@@ -453,7 +453,7 @@ height=274
 </div>
 
 </div>
-<div id="cell-id=51cfb12a-d8c2-4689-a579-286ca8fd08f6" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
@@ -474,7 +474,7 @@ height=274
 </div>
 
 </div>
-<div id="cell-id=26cd05f3-702b-4521-942f-f72f98b1ff45" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The model is a two layer neural network as before. The output for each observation is a scalar in $[0,1]$, which we accomplish with the <code>sigmoid</code> on output. Note that that final <code>squeeze</code> operation makes sure it's a scalar rather than a length-1 tensor.</p>
@@ -482,7 +482,7 @@ height=274
 </div>
 </div>
 </div>
-<div id="cell-id=26990f58-4cfe-40d9-9fe5-2edacedfcbda" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
@@ -507,7 +507,7 @@ height=274
 </div>
 
 </div>
-<div id="cell-id=61a76e38-8406-452e-b70e-1c97ab833dbd" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now it is time to train. This is all quite similar to before. Notice the objective here is just the product of the position recommendation and the realized returns (averaged over the batch). One addition you'll notice is we wrap the epoch loop in the mysterious <code>tqdm</code>. This will function the same in the code but will also print out a neat little progress bar. Also, there are new <code>model.train()</code> and <code>model.eval()</code> commands. These are unecessary in the basic case, but we'll need them later.</p>
@@ -515,7 +515,7 @@ height=274
 </div>
 </div>
 </div>
-<div id="cell-id=be94e554-8bf1-4243-8277-4c14e1444512" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
@@ -576,14 +576,14 @@ height=274
 </div>
 
 </div>
-<div id="cell-id=8295ac84-0840-46a5-a63e-5c3bf2ab0097" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Overfitting">Overfitting<a class="anchor-link" href="#Overfitting">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div id="cell-id=d9336c3f-e04a-46c0-b53d-157689510dda" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now let's train this on some random data. Any returns we get should be purely noise, as these are just uncorrelated returns over time. You can see that we typically get 1-2% returns on the training data, while those in the validation set are over lower, but in general are quite noisy. The other thing to note is that for many runs, after some point in the training process we see the validation return start to go down, while the training return continues to rise. This is a classic signature of overfitting.</p>
@@ -591,7 +591,7 @@ height=274
 </div>
 </div>
 </div>
-<div id="cell-id=8f509274-eaa9-4360-863b-47d8957f90d8" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
@@ -612,7 +612,7 @@ height=274
 </div>
 
 </div>
-<div id="cell-id=2b27ab9d-8676-4303-9053-07fc3d333415" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
@@ -662,14 +662,14 @@ height=492
 </div>
 
 </div>
-<div id="cell-id=03b50cc3-02a5-4be7-ad71-cd87a27b510a" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Real-Signal-(Momentum)">Real Signal (Momentum)<a class="anchor-link" href="#Real-Signal-(Momentum)">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div id="cell-id=cc28ffeb-820c-46c6-9770-04bf71c9aa12" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now let's at least give ourselves a chance and add in some momentum (EMH violation alert!). Obivously this can happen in certain markets, and I think there's even an explanation in efficient markets relating to stochastic discount factors. Like it's okay as long as returns are uncorrelated with the SDF. Anyway, that doesn't matter here, we can simulate whatever the hell we want.</p>
@@ -677,7 +677,7 @@ height=492
 </div>
 </div>
 </div>
-<div id="cell-id=343e59c4-51ca-43ec-afb6-ce03ff33e276" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
@@ -696,7 +696,7 @@ height=492
 </div>
 
 </div>
-<div id="cell-id=a0ccec0f-70cc-40ce-b608-04220e6a0c5f" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
@@ -715,7 +715,7 @@ height=492
 </div>
 
 </div>
-<div id="cell-id=569f96a0-7f87-4f85-bf4c-d71d5dc541a0" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
@@ -765,14 +765,14 @@ height=492
 </div>
 
 </div>
-<div id="cell-id=ea499395-2e9d-420c-b5a1-5d916c5d9fb3" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Dropout">Dropout<a class="anchor-link" href="#Dropout">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div id="cell-id=75c14ea9-97f1-42fe-a2d8-945e6b58b72e" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We may be worried about what appears to be overfitting. The algorithm is just fitting noise. One popular approach to this is to use a method called &quot;dropout&quot; in which network connections are randomly severed during training (weights zeroed). This forces the algorithm to &quot;diversify&quot; and ideally reduces overfitting.</p>
@@ -780,7 +780,7 @@ height=492
 </div>
 </div>
 </div>
-<div id="cell-id=fe8598a0-8285-4ab8-9f58-1424c6b3b329" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
@@ -808,7 +808,7 @@ height=492
 </div>
 
 </div>
-<div id="cell-id=83e63da8-9fac-4185-b907-e65f2add4129" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
@@ -858,7 +858,7 @@ height=498
 </div>
 
 </div>
-<div id="cell-id=3fdd1ed8-fe02-4b05-bf9c-d3ad93cd8082" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
@@ -908,14 +908,14 @@ height=494
 </div>
 
 </div>
-<div id="cell-id=85637cc4-37d2-42b1-81cd-9bae233ba2a1" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Text-Analysis">Text Analysis<a class="anchor-link" href="#Text-Analysis">&#182;</a></h2>
 </div>
 </div>
 </div>
-<div id="cell-id=34dbd09d-cc29-4eae-8b72-2857ad33d38f" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
@@ -931,7 +931,7 @@ height=494
 </div>
 
 </div>
-<div id="cell-id=ac24a841-5516-4835-a53f-839c9c48d8c3" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
@@ -960,7 +960,7 @@ height=494
 </div>
 
 </div>
-<div id="cell-id=ee6849b1-72ee-4aa1-99ae-725e3831a335" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
@@ -1006,7 +1006,7 @@ height=494
 </div>
 
 </div>
-<div id="cell-id=4096e04c-3fe1-4ebe-b3a0-b1248d3755e6" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
@@ -1040,7 +1040,7 @@ height=494
 </div>
 
 </div>
-<div id="cell-id=a097557e-dfef-471b-8d28-03915dd370b9" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
@@ -1077,7 +1077,7 @@ somehow mildly reminded him of his mortality.
 </div>
 
 </div>
-<div id="cell-id=18a37c33-665c-4448-8510-916c088379ac" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
@@ -1225,7 +1225,7 @@ somehow mildly reminded him of his mortality.
 </div>
 
 </div>
-<div id="cell-id=f21b6162-ad08-49f9-803b-1de10500e3f6" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
@@ -1257,7 +1257,7 @@ somehow mildly reminded him of his mortality.
 </div>
 
 </div>
-<div id="cell-id=70593f6b-a34a-4db8-95af-690d50d59f6d" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
@@ -1294,7 +1294,7 @@ somehow mildly reminded him of his mortality.
 </div>
 
 </div>
-<div id="cell-id=a9e5e94e-ea10-4604-9cdd-3fe1239f90a2" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
@@ -1330,7 +1330,7 @@ somehow mildly reminded him of his mortality.
 </div>
 
 </div>
-<div id="cell-id=861b85b5-2e41-4802-ab99-30850fd37985" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
@@ -1363,14 +1363,14 @@ somehow mildly reminded him of his mortality.
 </div>
 
 </div>
-<div id="cell-id=f1f6c2da-2c25-41b3-8e41-4a0ec84eea32" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Text-Similarity">Text Similarity<a class="anchor-link" href="#Text-Similarity">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div id="cell-id=d362a5e7-6d34-4fe2-a24d-06b8ae2acd6d" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
@@ -1405,7 +1405,7 @@ somehow mildly reminded him of his mortality.
 </div>
 
 </div>
-<div id="cell-id=4c95c2ea-073a-4885-88f8-f0625dc5fedf" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
@@ -1444,7 +1444,7 @@ height=404
 </div>
 
 </div>
-<div id="cell-id=fead8bd1-e6a1-4cd9-b10d-93ddf281a4ce" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
@@ -1500,7 +1500,7 @@ good — 2899
 </div>
 
 </div>
-<div id="cell-id=c412e4d7-30ee-4e1a-9da5-68279163fef8" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
@@ -1553,7 +1553,7 @@ height=411
 </div>
 
 </div>
-<div id="cell-id=890713d9-21e0-4fd3-abaf-3cea97dd859d" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
@@ -1571,7 +1571,7 @@ height=411
 </div>
 
 </div>
-<div id="cell-id=eee36eb5-389f-48cf-a930-e33449c26299" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
@@ -1736,14 +1736,14 @@ height=411
 </div>
 
 </div>
-<div id="cell-id=9f3a5f5f-b0cd-47e6-95d0-80eb1a60600d" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Text-Visualization">Text Visualization<a class="anchor-link" href="#Text-Visualization">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div id="cell-id=3745c4f4-02cc-47f7-bb8b-a423e2e3142f" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
@@ -1757,7 +1757,7 @@ height=411
 </div>
 
 </div>
-<div id="cell-id=6c2fa847-6e47-433b-8146-d562da54ea75" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
@@ -1800,14 +1800,14 @@ height=404
 </div>
 
 </div>
-<div id="cell-id=7a377116-0267-4665-8cf3-2e4a2f32c203" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Language-Models">Language Models<a class="anchor-link" href="#Language-Models">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div id="cell-id=49f1ef3e-07cd-495c-8bb7-6dc769058a52" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
@@ -1822,7 +1822,7 @@ height=404
 </div>
 
 </div>
-<div id="cell-id=aca2fef5-e3bf-447b-b916-faa67a62f10e" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
@@ -1837,7 +1837,7 @@ height=404
 </div>
 
 </div>
-<div id="cell-id=e2eb4214-9683-41fd-85fe-2ebc255290aa" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
@@ -1872,7 +1872,7 @@ moby | dick | by | herman | melville | 1851 | \n | etymology | . | \n | ( | supp
 </div>
 
 </div>
-<div id="cell-id=8ac9676d-562a-4cc1-a371-d890ff3e71e4" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
@@ -1908,7 +1908,7 @@ moby | dick | by | herman | melville | 1851 | \n | etymology | . | \n | ( | supp
 </div>
 
 </div>
-<div id="cell-id=17da6149-c5e8-4a4c-b532-e99194b7c1b3" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
@@ -1947,7 +1947,7 @@ moby | dick | by | herman | melville | 1851 | \n | etymology | . | \n | ( | supp
 </div>
 
 </div>
-<div id="cell-id=f0dc1025-d0fc-4d2c-a66a-07035392c4f0" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
@@ -2010,7 +2010,7 @@ moby | dick | by | herman | melville | 1851 | \n | etymology | . | \n | ( | supp
 </div>
 
 </div>
-<div id="cell-id=5db81c26-fa5e-4c12-b4d6-a3a3fb367b33" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
@@ -2026,7 +2026,7 @@ moby | dick | by | herman | melville | 1851 | \n | etymology | . | \n | ( | supp
 </div>
 
 </div>
-<div id="cell-id=3c011c21-226b-4e9a-a448-113820084b6c" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
@@ -2044,7 +2044,7 @@ moby | dick | by | herman | melville | 1851 | \n | etymology | . | \n | ( | supp
 </div>
 
 </div>
-<div id="cell-id=ab408d1d-3a74-4507-a45b-aa7ff18b89ef" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
@@ -2107,7 +2107,7 @@ height=404
 </div>
 
 </div>
-<div id="cell-id=dd6088a5-5e88-4663-8d4c-edb0b6043280" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
@@ -2158,7 +2158,7 @@ height=404
 </div>
 
 </div>
-<div id="cell-id=9321a0a0-46e2-4e5f-aa11-c48a216c46ff" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
@@ -2190,7 +2190,7 @@ height=404
 </div>
 
 </div>
-<div id="cell-id=002ca4e9-2c3b-4c6c-ad9b-ba471546f6ec" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
@@ -2232,7 +2232,7 @@ height=404
 </div>
 
 </div>
-<div id="cell-id=f908bbe7-697c-42e2-a200-6afa96bcc901" class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
