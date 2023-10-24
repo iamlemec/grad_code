@@ -9,16 +9,14 @@
 </head>
 <body>
 <div id="container">
-
-
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=9f8c4cd3-f2dc-4e36-ab0f-b77691e509e1"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Machine-Learning-(with-jax)">Machine Learning (with <code>jax</code>)<a class="anchor-link" href="#Machine-Learning-(with-jax)">¶</a></h1>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=341d73ac-e4ee-4bf7-9e70-a6c8c4ec2fc6">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
@@ -30,7 +28,8 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=ef711f7a-bbe7-41f5-9184-eff46e5ab824">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
@@ -41,7 +40,8 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=4b56ef96-8628-4945-97a2-040f77de81e3">
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
@@ -56,7 +56,8 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=571a314e-aca6-445a-8163-8eb59d58ed67">
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
@@ -67,7 +68,8 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=cad61446-dc59-4cc4-805f-fc3b6a684489">
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
@@ -79,21 +81,22 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=6c700029-25d5-44c2-af16-09776ade5974"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Helpful-Tools">Helpful Tools<a class="anchor-link" href="#Helpful-Tools">¶</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=cca924a8-5e4f-4ada-92e7-f17b922a2c6f"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>First let's define some tools that will be useful as we go. Generally, our parameters will be stored in a <code>jax</code> tree, which is often just a one level dictionary. Operations don't automatically broadcast across the leaves of a tree, so we need to use <code>jax.tree_map</code> to do so. Here's a function that applies a gradient update to a tree</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=6f901c18-ec28-4887-bb7b-15745a8decb4">
 <div class="input">
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
@@ -104,14 +107,15 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=f374f604-49d4-4643-8209-824a6ba3ecde"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Linear-Regression">Linear Regression<a class="anchor-link" href="#Linear-Regression">¶</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=a3ed84c0-b489-443c-a2dc-bf1f718f97e0"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here we're considering the case of a linear model with Guassian noise. In this case, the likelihood function looks like</p>
@@ -121,7 +125,7 @@ $$<p>For our purposes, it is sufficient to simply maximize the sum (or mean) of 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=e2e95a30-fe40-4767-bd6e-5e1a71d42c19">
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
@@ -135,14 +139,15 @@ $$<p>For our purposes, it is sufficient to simply maximize the sum (or mean) of 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=d936c214-8d2d-4f01-85b8-19c03bd9c791"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now we'll make a function to evaluate the mean squared error (MSE) and compute its derivative function. Then we create an "update" function that uses the gradient to generate a new and hopefully better guess for the coefficients. Notice how we use <code>jax.jit</code> as a decorator to automatically compile the update function.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=631d57b1-96c0-4141-b3f9-fa876bb73680">
 <div class="input">
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
@@ -158,7 +163,8 @@ $$<p>For our purposes, it is sufficient to simply maximize the sum (or mean) of 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=de631531-10a6-4ba3-aa6f-4569f6d0a752">
 <div class="input">
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
@@ -174,14 +180,15 @@ $$<p>For our purposes, it is sufficient to simply maximize the sum (or mean) of 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=e11e52aa-4277-4b91-b27c-215df9282368"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Finally, we run this through scan and plot the resulting path of coefficients and the MSE. We use a fixed-length loop for simplicity here, but one could also use <code>lax.while_loop</code> to exit conditional on the MSE not changing enough over time.  But you wan't to be careful not to exit too early, as sometimes you can get stuck on a flat then suddenly start improving again.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=12b9af34-635e-4181-aa3b-d4bad445ff82">
 <div class="input">
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
@@ -205,7 +212,7 @@ $$<p>For our purposes, it is sufficient to simply maximize the sum (or mean) of 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=50ac7d14-47dd-4493-b941-b84de881c24a">
 <div class="input">
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
@@ -227,14 +234,16 @@ $$<p>For our purposes, it is sufficient to simply maximize the sum (or mean) of 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=76b372a1-b283-40c1-a0ff-979047ec23a9"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Logistic-Regression">Logistic Regression<a class="anchor-link" href="#Logistic-Regression">¶</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=21d2c958-0aea-4960-b2ad-83bcc399d1b2"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Not let's level up to a logistic classification problem. This will ultimately be a stepping stone to multi-layer neural networks. Here were going to define a general logistic learning function and then apply it to various types of data. Our likelihood (and objective function) in this case is</p>
@@ -244,7 +253,7 @@ $$<p>where $x_i \in \{0,1\}$ and $p_i$ is the predicted probability of $y_i$ tak
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=c21a3250-29ad-4002-9844-5942fa19475c">
 <div class="input">
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
@@ -258,14 +267,15 @@ $$<p>where $x_i \in \{0,1\}$ and $p_i$ is the predicted probability of $y_i$ tak
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=5e9408fb-aa55-4656-abce-9cf7300c2f46"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As before we define a predict function that returns a vector of logits, then we pass this to binary crossentropy for our objective value.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=5d215943-d3ee-492b-be87-718159e77a81">
 <div class="input">
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
@@ -283,14 +293,15 @@ $$<p>where $x_i \in \{0,1\}$ and $p_i$ is the predicted probability of $y_i$ tak
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=7235f299-46db-4eed-b560-a4584e2f267f"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We're interested in quite a few running statistics of performance, so let's define a standalone function that computes them for given coefficients and data values.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=2d136ed2-0090-4255-b7c7-c13dc09222fd">
 <div class="input">
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
@@ -324,14 +335,15 @@ $$<p>where $x_i \in \{0,1\}$ and $p_i$ is the predicted probability of $y_i$ tak
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=d3978e57-faa5-4d9d-aee9-f0b386fa3825"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now we can define our logit learning, which takes <code>x</code> and <code>y</code> data values as input and returns the estimated coefficients and the history of statistics over the learning process. Notice that below we use <code>partial</code> to modify the <code>jax.jit</code> decorator to account for the fact that we're passing <code>K</code> to the <code>scan</code> function.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=574f667f-5ca6-48aa-9b7b-eea089ca1831">
 <div class="input">
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
@@ -357,21 +369,22 @@ $$<p>where $x_i \in \{0,1\}$ and $p_i$ is the predicted probability of $y_i$ tak
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=70729faa-33be-4335-b2db-591c0e627f4d"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Linear-Data">Linear Data<a class="anchor-link" href="#Linear-Data">¶</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=ae85395d-ef4c-42db-8509-36a1c7162d2c"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now we're going to feed some real (fake) data to the logit learner. Let's make it 100 dimensional hyperplane with intercept <code>0</code> and slope <code>1</code> in every dimension. In two dimensions, this would be a $-45^{\circ}$ line. We'll make the dataset fairly large with $10,000$ rows of random, uncorellated covariates.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=4f62c3a5-464c-42e6-bb47-f92a1deb8cc2">
 <div class="input">
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
@@ -384,7 +397,8 @@ $$<p>where $x_i \in \{0,1\}$ and $p_i$ is the predicted probability of $y_i$ tak
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=c19b8b15-f0d5-4d2b-89e2-2af9b655ddee">
 <div class="input">
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
@@ -411,14 +425,14 @@ $$<p>where $x_i \in \{0,1\}$ and $p_i$ is the predicted probability of $y_i$ tak
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=9d3f4d26-fe4b-40fc-91df-b8d4c0bd81bd"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now let's run the algorithm and visualize the results and the path we took to get there. We need to choose the step size $\Delta$ and the number of iterations $K$. Notice that learning the <code>β1</code> values is actually pretty slow!</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=363a2fb9-0135-46a0-b793-af170a6440ed">
 <div class="input">
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
@@ -448,7 +462,8 @@ Name: 4999, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=627cdff7-68a5-4cd3-85da-c769895a6c21">
 <div class="input">
 <div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
@@ -468,14 +483,16 @@ Name: 4999, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=bb60cff2-2138-4955-9df2-4a5562da36f4"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In some settings, overfitting can be a big issue. Let's see how we do on some additional data that we didn't train on. Given the extremely simple nature of the model (two paramters) relative to the data complexity, I would expect minimal overfitting, and that is indeed what we see. The validation accuracy is nearly identical to the training accuracy.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=c99b66a8-9f62-4d60-9a10-351f65bc9ff3">
 <div class="input">
 <div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
@@ -508,21 +525,22 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=ec06da2d-fec1-4a4b-adf6-2424adfe2272"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Non-linear-data">Non-linear data<a class="anchor-link" href="#Non-linear-data">¶</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=ddf400d5-d17e-4899-a7de-3e869d84c7cf"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now let's do some non-linear, non-monotone data. Here we still use $100$ dimensions, but we classify the points based on whether they lie within a unit RMS neighborhood of the origin. With standard normal input data, this ensures that roughly half the points are in each category.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=5a9ea10e-5074-4480-bea5-5e5840e24131">
 <div class="input">
 <div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
@@ -546,14 +564,14 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=6a464d84-3ed8-4912-bab3-78d5d0415805"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Running the same steps of estimation, visualization, and validation checking, we see that the convergence is much faster, but the ultimate predictive accuracy is only slightly better than random chance.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=111a6009-635e-4536-a558-0493bb9ad38a">
 <div class="input">
 <div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
@@ -583,7 +601,8 @@ Name: 99, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=6fa8ceb9-4953-49ca-8eef-35660f615576">
 <div class="input">
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
@@ -603,7 +622,9 @@ Name: 99, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=ebe13a62-e5f1-4e59-bc69-467cfa33327d">
 <div class="input">
 <div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
@@ -635,28 +656,29 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=51344875-20f3-44fd-8963-456aa50e40b8"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So both the training validation accuracy are very low. And actually, that's not surprising. We're trying to classify a radially oriented category with a hyperplane. It's doomed to fail! So we need a more complex model.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=8bee902f-42ee-4a53-9988-a2f1cd7bdc76"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Neural-Networks">Neural Networks<a class="anchor-link" href="#Neural-Networks">¶</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=33a6a872-db2f-4c86-8f01-5d80c500d592"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Time for some neural networks! First, let's generate our data sample. Here I'm going with kind of midpoint between the linear and spherical case, and we're restricting ourselves to two dimensions so we can easily visualize things. The classification rule is some kind of hill function that obviously can't be captured with a single hyperplane.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=ad04c5ef-39db-4d03-8d44-1d5d1867e6ec">
 <div class="input">
 <div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
@@ -671,7 +693,8 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=b6558865-36c7-4fef-8f0e-b7f53171d930">
 <div class="input">
 <div class="prompt input_prompt">In [26]:</div>
 <div class="inner_cell">
@@ -696,14 +719,16 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=24c5ba5f-6e5c-4d13-9323-2d383f665c53"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So we're going to need to basically chain two logistic regressions together into a two layer neural network. First we feed the data into the "hidden" layer (of arbitrary dimension), then the output of the hidden layer is fed to the output layer, which yields a single number. The steps below are roughly analogous to what we did for the logistic regression.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=925857b8-4759-4a35-b037-13b2ae7c889d">
 <div class="input">
 <div class="prompt input_prompt">In [27]:</div>
 <div class="inner_cell">
@@ -717,7 +742,8 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=4062fb43-d547-4320-bfa9-e0b90654aa46">
 <div class="input">
 <div class="prompt input_prompt">In [28]:</div>
 <div class="inner_cell">
@@ -731,7 +757,8 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=9924c8b6-e279-42d5-a87d-9e9f10e1b3b6">
 <div class="input">
 <div class="prompt input_prompt">In [29]:</div>
 <div class="inner_cell">
@@ -754,7 +781,8 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=49eaa3aa-2266-4df9-b019-4b5cca6dbef3">
 <div class="input">
 <div class="prompt input_prompt">In [48]:</div>
 <div class="inner_cell">
@@ -782,14 +810,15 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=a6beaac9-44ca-4877-a279-79f8c50acade"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now for the training. One thing you'll notice is that it doesn't always succeed! Run it a couple of times until you get accuracy percentages in the high 90's. We're still using a very rudimentary gradient descent optimizer. We'll want to tech this up in the future, but I just want to show you how things can start to go wrong.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=86dff6d6-8653-479d-8653-5523d532cd7e">
 <div class="input">
 <div class="prompt input_prompt">In [49]:</div>
 <div class="inner_cell">
@@ -820,7 +849,8 @@ Name: 1999, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=0934509d-26fc-4de3-bb26-9f1a6a775757">
 <div class="input">
 <div class="prompt input_prompt">In [50]:</div>
 <div class="inner_cell">
@@ -840,14 +870,16 @@ Name: 1999, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=49612de3-1d6b-4369-80fd-39c90d51227a"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Nonetheless, when it does work, we get good accuracy in the end. Let's try to visualize what exactly is going on. Below, I generate a scatter plot of the predicted values for a dense grid of input data. You can see it very closely resembles the true function, reflecting the high accuracy.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=4a0956ee-7c6d-429f-b5f9-1722a8abdef3">
 <div class="input">
 <div class="prompt input_prompt">In [51]:</div>
 <div class="inner_cell">
@@ -870,7 +902,8 @@ Name: 1999, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=17c1fb51-0189-4661-a846-f500a2b0cf37">
 <div class="input">
 <div class="prompt input_prompt">In [52]:</div>
 <div class="inner_cell">
@@ -888,7 +921,8 @@ Name: 1999, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=ec00735b-e38c-4cc9-9b8d-42fe7b66ed9b">
 <div class="input">
 <div class="prompt input_prompt">In [53]:</div>
 <div class="inner_cell">
@@ -911,14 +945,16 @@ Name: 1999, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=44248cad-5e1f-4c8e-9cc7-5a0cb0ad43c8"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>But we also have hidden layers, whose "activations" we can peer into. We need to be a little careful about how we do it, but below you can see how the non-linear shape is generated with the combination of two opposed hyperplanes. So the trained neural network is being kind of smart.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=19749216-d9b6-4c0e-9eb8-eb6613b05de6">
 <div class="input">
 <div class="prompt input_prompt">In [54]:</div>
 <div class="inner_cell">
@@ -959,21 +995,23 @@ Name: 1999, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=ed271322-6f63-4f14-81bb-4d7caf0f3c31"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Getting-Fancy:-Optimizers">Getting Fancy: Optimizers<a class="anchor-link" href="#Getting-Fancy:-Optimizers">¶</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=d3635d7d-ce12-4fd8-a2dc-e16db95c42a5"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Okay, we've kind of been doing things by hand so far to get an idea of how things work. Now let's boost our productivity by using higher level tools built for neural networks. We may want to use more advanced optimizers than crude gradient descent. For this we can use the <code>optax</code> library, which is built on <code>jax</code>.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=b44cf2e4-93d2-4091-9ffa-de5ab2d9bd02">
 <div class="input">
 <div class="prompt input_prompt">In [37]:</div>
 <div class="inner_cell">
@@ -984,14 +1022,15 @@ Name: 1999, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=d32de352-47f3-4a48-98e0-163afc8f2735"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There are a few new concepts here. First, we create an optimizier <code>opt</code>, which in this case is <code>rmsprop</code>, a fairly common and effective one. Then we create a "state" which keeps track of things over time (for instance, a moving average of past gradients). We than use <code>opt.update</code> to update the state and generate increments for our parameters, which we apply with <code>apply_updates</code>, which is nearly identical to our <code>update_coeff</code> function. Note that people in machine learning <em>minimize</em> functions, so we need to negate the gradients we pass (which were generated with maximizing in mind).</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=8fb6cddc-15e5-4ae6-b1ae-3e890c3d357d">
 <div class="input">
 <div class="prompt input_prompt">In [38]:</div>
 <div class="inner_cell">
@@ -1025,7 +1064,8 @@ Name: 1999, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=2db119a4-bda3-4f0e-a565-c009d38690e7">
 <div class="input">
 <div class="prompt input_prompt">In [39]:</div>
 <div class="inner_cell">
@@ -1056,7 +1096,8 @@ Name: 3999, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=7ccf3c9f-bf32-4068-8c4d-5d4bbda71c6e">
 <div class="input">
 <div class="prompt input_prompt">In [40]:</div>
 <div class="inner_cell">
@@ -1076,28 +1117,30 @@ Name: 3999, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=9650b37f-ebb7-4819-90a6-484066046b00"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It works much better now! Note that different optimizers work better or worse for different types of problems. In this case <code>rmsprop</code> works quite well, while <code>adam</code> doesn't seem to reliably work.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=b1b09079-6112-46f1-8750-805237696e82"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Getting-Fancy:-Modules">Getting Fancy: Modules<a class="anchor-link" href="#Getting-Fancy:-Modules">¶</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=24b3ff85-214f-44ed-af9c-73d072954f34"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Creating modular and reusable blocks that we assemble into complex neural networks is the name of the game in deep learning. In the <code>jax</code> world, there is a library called <code>flax</code> that does a lot of the heavy lifting here. There are actually quite a few libraries that implement the "Module" concept in the <code>jax</code> ecosystem. And this idea actually stems originally from <code>pytorch</code> and <code>keras</code>, which builds on top of <code>tensorflow</code>.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=2f07fdeb-edbe-4d95-8157-cd6e0c7de24c">
 <div class="input">
 <div class="prompt input_prompt">In [41]:</div>
 <div class="inner_cell">
@@ -1107,7 +1150,8 @@ Name: 3999, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=bc84849d-925c-4b27-9802-b81acc30a869">
 <div class="input">
 <div class="prompt input_prompt">In [42]:</div>
 <div class="inner_cell">
@@ -1129,7 +1173,8 @@ Name: 3999, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=ba9629d5-6798-4a55-8a5d-28556a3402d3">
 <div class="input">
 <div class="prompt input_prompt">In [43]:</div>
 <div class="inner_cell">
@@ -1146,7 +1191,8 @@ Name: 3999, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=03321e1a-ed01-4a73-9b21-86531d51bdde">
 <div class="input">
 <div class="prompt input_prompt">In [44]:</div>
 <div class="inner_cell">
@@ -1193,7 +1239,8 @@ Name: 3999, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=cdd10bef-58a1-4c45-9241-9fb8a151e8b8">
 <div class="input">
 <div class="prompt input_prompt">In [45]:</div>
 <div class="inner_cell">
@@ -1227,7 +1274,8 @@ Name: 3999, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=dae30f2f-7163-44dc-ad22-122ae782e229">
 <div class="input">
 <div class="prompt input_prompt">In [46]:</div>
 <div class="inner_cell">
@@ -1247,7 +1295,9 @@ Name: 3999, dtype: float32</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=00d86935-d2f7-475f-a0a4-f033cd7ef703">
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
