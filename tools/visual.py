@@ -3,6 +3,7 @@
 ##
 
 import numpy as np
+import pandas as pd
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
@@ -39,3 +40,29 @@ def plot_homotopy(ppath, xpaths, rzero=None, czero=None, equal=True, axs=None):
     axs[0].set_xlabel('Solution (Real)')
     axs[1].set_xlabel('Solution (Imaginary)')
     axs[0].set_ylabel('Parameter')
+
+def plot_predict(y, yhat, smooth=None, clip=None, ax=None):
+    # construct dataframe
+    data = pd.DataFrame({'y': y, 'yhat': yhat})
+    data = data.sort_values(by='y', ignore_index=True)
+
+    # clip data if needed
+    if type(clip) is int:
+        data = data.loc[clip:len(data)-clip]
+    elif type(clip) is tuple:
+        data = data.loc[clip[0]:clip[1]]
+
+    # make plots
+    if ax is None:
+        fig, ax = plt.subplots()
+
+    # plot predicted    
+    data['yhat'].plot(ax=ax, color=colors[0], alpha=0.5);
+
+    # plot smoothed if needed
+    if smooth is not None:
+        smooth = data['yhat'].rolling(smooth).mean()
+        smooth.plot(ax=ax, color=colors[0]);
+
+    # plot ture
+    data['y'].plot(ax=ax, color=colors[1]);
