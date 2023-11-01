@@ -95,11 +95,14 @@ table.dataframe thead th {
 
 table.dataframe thead th {
     text-align: center;
+    font-family: 'Montserrat';
 }
 
 table.dataframe tbody td,
 table.dataframe tbody th {
     text-align: left;
+    font-family: monospace;
+    font-size: 105%;
 }
 
 table.simpletable {
