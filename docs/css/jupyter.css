@@ -453,10 +453,6 @@ div.output_area {
 div.output_area .MathJax_Display {
   text-align: left !important;
 }
-div.output_area .rendered_html table {
-  margin-left: 0;
-  margin-right: 0;
-}
 div.output_area .rendered_html img {
   margin-left: 0;
   margin-right: 0;
