@@ -38,3 +38,7 @@ def total_params(mod):
 # get batch indices
 def batch_indices(length, batch_size):
     return [(i, min(i+batch_size, length)) for i in range(0, length, batch_size)]
+
+# l2 normalize
+def l2_normalize(x, dim=1):
+    return x / x.norm(dim=dim, keepdim=True)
