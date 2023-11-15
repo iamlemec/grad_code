@@ -2,6 +2,7 @@
 
 import re
 import torch
+import torch.nn.functional as F
 
 # strip punctuation and merge whitespace
 def process_text(s):
@@ -42,3 +43,13 @@ def batch_indices(length, batch_size):
 # l2 normalize
 def l2_normalize(x, dim=1):
     return x / x.norm(dim=dim, keepdim=True)
+
+# ensure a list is of least length n by padding it
+def pad_list(x, n, v=0):
+    return x[-n:] + [v]*max(0, n-len(x))
+
+# sample index from a tensor of logits
+def sample_logits(logits, temp=1.0):
+    probs = F.softmax(logits/temp)
+    index = probs.multinomial(num_samples=1)
+    return index.item()
